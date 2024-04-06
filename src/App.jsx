@@ -17,8 +17,8 @@ function App() {
     <div className={`${blog.colors.bg} ${blog.colors.color} min-h-screen min-w-56`}>
 
    <Router>
-    <div className="overflow-hidden">
-
+    <div className="">
+      
      {/* Rendering the Navbar component */}
      <Navbar />
      <Routes>
