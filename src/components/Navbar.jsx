@@ -35,11 +35,11 @@ const Navbar = () => {
   }
   // console.log(blog.border.color);
   return (
-    <div className={`w-screen ${blog.colors.color} h-14  border-b px-5 ${blog.colors.border}  flex items-center justify-between fixed top-0 left-0 z-50 mx-auto`}>
+    <div className={`w-full ${blog.colors.color} h-14  border-b px-5 backdrop-blur-sm mb-2 ${blog.colors.border}  flex items-center justify-between sticky top-0 left-0 z-50 box-border `}>
       <div className="logo ">
         <h2 className=" text-lg font-bruco font-bold text-nowrap md:mr-16 ">TECH ZEN</h2>
       </div>
-      <div className={`btn flex gap-2 md:static absolute ${nav}  md:translate-y-0 flex-col justify-center items-center backdrop-blur-sm w-screen md:flex-row top-14 left-0  `}>
+      <div className={`btn flex gap-2 md:static absolute ${nav} ${blog.colors.bg} md:translate-y-0 flex-col justify-center items-center backdrop-blur-sm w-screen md:flex-row top-14 left-0  `}>
         <Link onClick={() => { closeMenu() }} to="/" className="w-fit px-3  py-1 rounded-lg  text-center" >Home</Link>
         <Link onClick={() => { closeMenu() }} to="/about" className="w-fit px-3 py-1 rounded-lg  text-center" >About</Link>
         <Link onClick={() => { closeMenu() }} to="/contact" className="w-fit px-3 py-1 rounded-lg  text-center" >Contact</Link>
