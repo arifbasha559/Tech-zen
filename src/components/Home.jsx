@@ -1,9 +1,16 @@
+import { useContext } from "react";
 import "../App.css";
+import BlogContext from "../context/BlogContext";
+import { Link } from "react-router-dom";
 const Home = () => {
+  const blog = useContext(BlogContext);
   const data = [1,2,3,4,5]
   return (
     <>
-    <div className="flex  flex-wrap  mx-auto w-full" >
+    <div className="w-full flex justify-center">
+
+    
+    <div className="flex  flex-wrap gap-3  m-auto w-11/12 " >
       {
         data.map((a,s)=>{
 return(
@@ -11,30 +18,27 @@ return(
   
   
 
-<div key={s} className="max-w-sm bg-white border  border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-  <div className="p-5">
-
-    <a href="#" className="bg-white w-full" >
-        <img className="rounded-t-lg" src="https://images.unsplash.com/photo-1707343843437-caacff5cfa74?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8" alt="" />
-    </a>
+<a key={s}  className={` max-w-xs  overflow-hidden shadow-lg rounded-lg ${blog.theme?"border-2":"border-[0.1px]"} ${blog.colors.border} `} >
+  <div className="aspect-w-4 aspect-h-3  overflow-hidden">
+    <img className="object-cover object-center w-full h-full hover:scale-125  transition-transform duration-300" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Card image"/>
   </div>
-    <div className="p-5">
-        <a href="#">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
-</div>
+  <div className="px-2 py-2">
+    <div className={`font-bold ${blog.colors.color} text-base mb-1`}>Title</div>
+    <p className={`text-gray-700 text-xs`}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <p className={`text-gray-700 text-xs mt-1`}>Author: John Doe</p>
+  </div>
+  <div className="px-2 py-2 mb-2">
+  <Link  to="/" className={`w-fit px-3 py-2  rounded-lg ${(blog.colors.bg == 'bg-black') ? "bg-white text-black" : "bg-black text-white "}  ${(!blog.theme) ? 'hover:bg-white/70' : 'hover:bg-black/70'} text-center`} >read more</Link>
+  </div>
+</a>
+
+
 
         )})}
         </div>
-    
+        </div>
     </>
   )
 }

@@ -23,7 +23,7 @@ const BlogState = (props) => {
     } else {
       setColors({
         color: "text-black",
-        border: 'border-black/30',
+        border: 'border-black/50',
         bg: 'bg-white'
       })
       

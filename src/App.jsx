@@ -17,7 +17,7 @@ function App() {
     <div className={`${blog.colors.bg} ${blog.colors.color} min-h-screen min-w-56`}>
 
    <Router>
-    <div className="">
+    <div className="w-full">
       
      {/* Rendering the Navbar component */}
      <Navbar />
