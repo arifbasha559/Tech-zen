@@ -4,13 +4,16 @@ import BlogContext from "../context/BlogContext";
 import { Link } from "react-router-dom";
 const Home = () => {
   const blog = useContext(BlogContext);
-  const data = [1,2,3,4,5]
+  const data = [1,2,3,4,5,1,2,3,4,5,1,2,3,4,5]
   return (
     <>
     <div className="w-full flex justify-center">
 
     
-    <div className="flex  flex-wrap gap-3  m-auto w-11/12 " >
+    <div className="flex  w-full" >
+      <div className="flex flex-wrap gap-3 ga bg-amber-100">
+
+    
       {
         data.map((a,s)=>{
 return(
@@ -18,7 +21,7 @@ return(
   
   
 
-<a key={s}  className={` max-w-xs  overflow-hidden shadow-lg rounded-lg ${blog.theme?"border-2":"border-[0.1px]"} ${blog.colors.border} `} >
+<a key={s}  className={` grap overflow-hidden shadow-lg  rounded-lg  ${blog.theme?"border-2":"border-[0.1px]"} ${blog.colors.border} `} >
   <div className="aspect-w-4 aspect-h-3  overflow-hidden">
     <img className="object-cover object-center w-full h-full hover:scale-125  transition-transform duration-300" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Card image"/>
   </div>
@@ -37,6 +40,7 @@ return(
 
 
         )})}
+      </div>
         </div>
         </div>
     </>
