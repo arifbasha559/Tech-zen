@@ -14,7 +14,7 @@ function App() {
  return (
    
    
-    <div className={`${blog.colors.bg} ${blog.colors.color} min-h-screen min-w-56`}>
+    <div className={`${blog.colors.bg} ${blog.colors.color} transition-colors duration-500 min-h-screen min-w-56`}>
 
    <Router>
     <div className="w-full">

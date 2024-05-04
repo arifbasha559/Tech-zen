@@ -35,7 +35,7 @@ const Navbar = () => {
   }
   // console.log(blog.border.color);
   return (
-    <div className={`w-full  ${blog.colors.color} h-14 mb-2 border-b px-5 ${blog.colors.border } ${ blog.colors.bg}   flex items-center justify-between sticky top-0 left-10 z-50 mx-auto`}>
+    <div className={`w-full transition-colors duration-500  ${blog.colors.color} h-14 mb-2 border-b px-5 ${blog.colors.border } ${ blog.colors.bg}   flex items-center justify-between sticky top-0 left-10 z-50 mx-auto`}>
       <div className="logo ">
         <h2 title="TECH ZEN" className=" text-lg font-bruco font-bold text-nowrap md:mr-16 " >TECH ZEN</h2>
       </div>
