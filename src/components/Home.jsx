@@ -3,12 +3,12 @@ import "../App.css";
 import BlogContext from "../context/BlogContext";
 import { Link } from "react-router-dom";
 const Home = () => {
-  const blog = useContext(BlogContext);
   const data = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+  const blog = useContext(BlogContext);
   return (
     <>
-      <div className="w-full flex justify-center">
-
+      <div className="w-full ">
+      <h1 className={`font-bruco w-full lg:text-9xl md:text-7xl text-6xl font-black lg:leading-snug border-b-2 mb-4 text-center ${blog.colors.border}`}>TECH ZEN</h1>
 
         <div className="flex  w-full" >
           <div className="grid gap-3 lg:grid-cols-3  md:grid-cols-2 grid-cols-1  mx-auto  cards  m-2 ">
@@ -21,10 +21,12 @@ const Home = () => {
 
 
 
-                  <a key={s} className={`  card  overflow-hidden shadow-lg  rounded-lg  transition-colors duration-500 ${blog.theme ? "border-2" : "border-[0.1px]"} ${blog.colors.border} `} >
+                  <div key={s} className={` first:col-span-3 first:row-span-2 card  h-auto overflow-hidden shadow-lg first:flex  first:w-  rounded-lg  transition-colors duration-500  `} >
                     <div className="aspect-w-4 aspect-h-3  overflow-hidden">
                       <img className="object-cover object-center w-full h-full hover:scale-125  transition-transform duration-300" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Card image" />
                     </div>
+                    <div className="h-fit ">
+
                     <div className="px-2 py-2">
                       <div className={`font-bold ${blog.colors.color} text-base mb-1`}>Title</div>
                       <p className={`text-gray-700 text-xs`}>
@@ -35,7 +37,8 @@ const Home = () => {
                     <div className="px-2 py-2 mb-2">
                       <Link to="/" className={`w-fit px-3 py-2  rounded-lg ${(blog.colors.bg == 'bg-black') ? "bg-white text-black" : "bg-black text-white "}  ${(!blog.theme) ? 'hover:bg-white/70' : 'hover:bg-black/70'} text-center`} >read more</Link>
                     </div>
-                  </a>
+                    </div>
+                  </div>
 
 
 
