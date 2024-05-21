@@ -12,16 +12,7 @@
   max-width: 20rem;
      */
 /* } */
-.card:nth-child(2),.card:nth-child(3){
-  
-  display: flex;
-  grid-column:  span 2 / span 2 ;
-}
-.cards{
-    width:auto;
-    padding: 0 10px;
-    margin: 0  auto;   
-}
+
 
 .nav-link {
     position: relative;
