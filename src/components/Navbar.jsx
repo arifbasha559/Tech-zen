@@ -11,7 +11,7 @@ const Navbar = () => {
   const [btn, setBtn] = useState(false)
   const [search, setSearch] = useState('invisible')
   const location = useLocation()
-  const borbg = (!blog.theme?'after:bg-white':"after:bg-black");
+  const borbg = (!blog.theme?'after:bg-white before:bg-white':"after:bg-black before:bg-black");
   const toggleSearch = () => {
     setBtn(!btn)
     if (btn == true) {
@@ -39,27 +39,27 @@ const Navbar = () => {
   
   // console.log(blog.border.color);
   return (
-    <div className={`w-full transition-colors duration-500  ${blog.colors.color} h-14 mb-2 border-b px-5 ${blog.colors.border} ${blog.colors.bg}   flex items-center justify-between sticky top-0 left-10 z-50 mx-auto`}>
+    <div className={`w-full transition-colors  duration-500  ${blog.colors.color} h-14 mb-2 border-b px-5 ${blog.colors.border} ${blog.colors.bg}   flex items-center justify-between sticky top-0 left-10 z-50 mx-auto`}>
       <div className="logo ">
-        <h2 title="TECH ZEN" className=" text-lg font-bruco font-bold text-nowrap md:mr-16 " >TECH ZEN</h2>
+        <h2 title="TECH ZEN" className=" text-xl font-bruco font-extrabold tracking-wide text-nowrap md:mr-16 " >TECH ZEN</h2>
       </div>
-      <div className={`btn flex gap-2 lg:static absolute ${nav} -z-10 h-screen lg:h-fit  ${blog.colors.bg} transition-all duration-500 lg:translate-y-0 flex-col justify-center items-center backdrop-blur-sm w-screen lg:flex-row top-14 left-0  `}>
-        <Link onClick={() => { closeMenu() }} to="/" className={`w-fit ${location.pathname==='/'?"activate":"" }  nav-link ${borbg} px-2 ${blog.colors.color}  py-1   text-center`} title="Home" >Home</Link>
-        <Link onClick={() => { closeMenu() }} to="/about" className={`w-fit ${location.pathname==='/about'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-1 rounded-lg  text-center`} title="About" >About</Link>
-        <Link onClick={() => { closeMenu() }} to="/contact" className={`w-fit ${location.pathname==='/contact'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-1 rounded-lg  text-center`} title="Contact" >Contact</Link>
-        <Link onClick={() => { closeMenu() }} to="/login" className={`w-fit ${location.pathname==='/login'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-1 rounded-lg  text-center`} title="LogIn" >Log In</Link>
-        <Link onClick={() => { closeMenu() }} to="/register" className={`w-fit ${location.pathname==='/register'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-1 rounded-lg  text-center`} title="register" >Register</Link>
+      <div className={`btn flex gap-2 lg:static absolute ${nav} text-sm font-medium -z-10 h-screen lg:h-fit ${blog.colors.bg} transition-all duration-500 lg:translate-y-0 flex-col justify-center items-center  w-screen lg:flex-row top-14 left-0  `}>
+        <Link onClick={() => { closeMenu() }} to="/" className={`w-fit ${location.pathname==='/'?"activate":"" }  nav-link ${borbg} px-2 ${blog.colors.color}  py-0.5   text-center`} title="Home" >Home</Link>
+        <Link onClick={() => { closeMenu() }} to="/about" className={`w-fit ${location.pathname==='/about'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="About" >About</Link>
+        <Link onClick={() => { closeMenu() }} to="/contact" className={`w-fit ${location.pathname==='/contact'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="Contact" >Contact</Link>
+        <Link onClick={() => { closeMenu() }} to="/login" className={`w-fit ${location.pathname==='/login'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="LogIn" >Log In</Link>
+        <Link onClick={() => { closeMenu() }} to="/register" className={`w-fit ${location.pathname==='/register'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="register" >Register</Link>
        
         {/* mobile screen search button  */}
         <div className="flex gap-2 md:hidden">
 
           <form className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1  items-center w-4/5 justify-between  flex rounded-lg outline-none `}>
-            <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." className={`bg-transparent w-full  ${(!blog.theme) ? 'placeholder-gray-500' : 'placeholder-black/40'} mr-auto placeholder:text-sm  w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
+            <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent w-full  ${(!blog.theme) ? 'placeholder-gray-500' : 'placeholder-black/40 '} mr-auto placeholder:text-sm   w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
             <button type="reset"  >
               <RxCross2 />
             </button>
           </form>
-          <button type="button" onClick={() => { toggleSearch() }} className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  p-1.5 items-center rounded-full outline-none md:hidden flex`}>
+          <button type="submit"  className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  p-1.5 items-center rounded-full outline-none md:hidden flex`}>
             <IconContext.Provider value={{ className: `${blog.colors.color}` }}>
               <FaSearch />
             </IconContext.Provider>
@@ -81,8 +81,8 @@ const Navbar = () => {
       </div>
       {/* big screen search button  */}
       <div className="search pl-3 py-1 flex gap-2 justify-between items-center  ">
-        <form className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1 hidden md:flex items-center rounded-lg outline-none ${search} `}>
-          <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." className={`bg-transparent ${(!blog.theme) ? 'placeholder-gray-500' : 'placeholder-black/40'} placeholder:text-sm  w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
+        <form className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1 hidden md:flex items-center rounded-lg outline-none ${search}  `}>
+          <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent ${(!blog.theme) ? 'placeholder-gray-500 ' : 'placeholder-black/40 font-medium'} placeholder:text-sm  w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
           <button type="reset"  >
             <RxCross2 />
           </button>
