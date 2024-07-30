@@ -82,7 +82,7 @@ const Navbar = () => {
       {/* big screen search button  */}
       <div className="search pl-3 py-1 flex gap-2 justify-between items-center  ">
         <form className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1 hidden md:flex items-center rounded-lg outline-none ${search}  `}>
-          <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent ${(!blog.theme) ? 'placeholder-gray-500 ' : 'placeholder-black/40 font-medium'} placeholder:text-sm  w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
+          <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent ${(!blog.theme) ? 'placeholder-gray-500 ' : 'placeholder-black/40 '} placeholder:text-sm  w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
           <button type="reset"  >
             <RxCross2 />
           </button>
