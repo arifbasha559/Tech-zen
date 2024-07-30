@@ -39,26 +39,10 @@ const Navbar = () => {
   
   // console.log(blog.border.color);
   return (
-<<<<<<< HEAD
-    <div className={`w-full ${blog.colors.color} h-14  border-b px-5 backdrop-blur-sm mb-2 ${blog.colors.border}  flex items-center justify-between sticky top-0 left-0 z-50 box-border `}>
-=======
     <div className={`w-full transition-colors duration-500  ${blog.colors.color} h-14 mb-2 border-b px-5 ${blog.colors.border} ${blog.colors.bg}   flex items-center justify-between sticky top-0 left-10 z-50 mx-auto`}>
->>>>>>> 40bea1044d7bf1a4204899e08f720bb67b83a432
       <div className="logo ">
         <h2 title="TECH ZEN" className=" text-lg font-bruco font-bold text-nowrap md:mr-16 " >TECH ZEN</h2>
       </div>
-<<<<<<< HEAD
-      <div className={`btn flex gap-2 md:static absolute ${nav} ${blog.colors.bg} md:translate-y-0 flex-col justify-center items-center backdrop-blur-sm w-screen md:flex-row top-14 left-0  `}>
-        <Link onClick={() => { closeMenu() }} to="/" className="w-fit px-3  py-1 rounded-lg  text-center" >Home</Link>
-        <Link onClick={() => { closeMenu() }} to="/about" className="w-fit px-3 py-1 rounded-lg  text-center" >About</Link>
-        <Link onClick={() => { closeMenu() }} to="/contact" className="w-fit px-3 py-1 rounded-lg  text-center" >Contact</Link>
-        <Link onClick={() => { closeMenu() }} to="/login" className={`w-fit px-3 py-1 rounded-lg ${(blog.colors.bg == 'bg-black') ? "bg-white text-black" : "bg-black text-white "}  ${(!blog.theme) ? 'hover:bg-white/70' : 'hover:bg-black/70'} text-center`} >login</Link>
-        <Link onClick={() => { closeMenu() }} to="/register" className={`w-fit px-3 py-1 rounded-lg ${(blog.colors.bg == 'bg-black') ? "bg-white text-black" : "bg-black text-white "} ${(!blog.theme) ? 'hover:bg-white/70' : 'hover:bg-black/70'} text-center`} >Register</Link>
-        <form className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1  items-center w-4/5 justify-between flex sm:hidden  rounded-lg outline-none `}>
-          <input type="text" name="search" placeholder="Search Anything..." className={`bg-transparent w-full  ${(!blog.theme) ? 'placeholder-gray-500' : 'placeholder-black/40'} mr-auto placeholder:text-sm  w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
-          <button type="reset">
-            <RxCross2 />
-=======
       <div className={`btn flex gap-2 lg:static absolute ${nav} -z-10 h-screen lg:h-fit  ${blog.colors.bg} transition-all duration-500 lg:translate-y-0 flex-col justify-center items-center backdrop-blur-sm w-screen lg:flex-row top-14 left-0  `}>
         <Link onClick={() => { closeMenu() }} to="/" className={`w-fit ${location.pathname==='/'?"activate":"" }  nav-link ${borbg} px-2 ${blog.colors.color}  py-1   text-center`} title="Home" >Home</Link>
         <Link onClick={() => { closeMenu() }} to="/about" className={`w-fit ${location.pathname==='/about'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-1 rounded-lg  text-center`} title="About" >About</Link>
@@ -82,18 +66,6 @@ const Navbar = () => {
           </button>
         </div>
         {/* big screen theme changable buttton  */}
-      <div className={`btn flex gap-2 md:static absolute ${nav} ${blog.colors.bg} md:translate-y-0 flex-col justify-center items-center backdrop-blur-sm w-screen md:flex-row top-14 left-0  `}>
-        <Link onClick={() => { closeMenu() }} to="/" className="w-fit px-3  py-1 rounded-lg  text-center" >Home</Link>
-        <Link onClick={() => { closeMenu() }} to="/about" className="w-fit px-3 py-1 rounded-lg  text-center" >About</Link>
-        <Link onClick={() => { closeMenu() }} to="/contact" className="w-fit px-3 py-1 rounded-lg  text-center" >Contact</Link>
-        <Link onClick={() => { closeMenu() }} to="/login" className={`w-fit px-3 py-1 rounded-lg ${(blog.colors.bg == 'bg-black') ? "bg-white text-black" : "bg-black text-white "}  ${(!blog.theme) ? 'hover:bg-white/70' : 'hover:bg-black/70'} text-center`} >login</Link>
-        <Link onClick={() => { closeMenu() }} to="/register" className={`w-fit px-3 py-1 rounded-lg ${(blog.colors.bg == 'bg-black') ? "bg-white text-black" : "bg-black text-white "} ${(!blog.theme) ? 'hover:bg-white/70' : 'hover:bg-black/70'} text-center`} >Register</Link>
-        <form className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1  items-center w-4/5 justify-between flex sm:hidden  rounded-lg outline-none `}>
-          <input type="text" name="search" placeholder="Search Anything..." className={`bg-transparent w-full  ${(!blog.theme) ? 'placeholder-gray-500' : 'placeholder-black/40'} mr-auto placeholder:text-sm  w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
-          <button type="reset">
-            <RxCross2 />
-          </button>
-        </form>
         <button onClick={() => { blog.toggleTheme(), closeMenu() }}
           className="size-8 rounded-lg p-1 hover:text-white  hidden lg:flex ">
           <svg className={`fill-violet-700 ${(blog.theme) ? 'block' : 'hidden'} `} fill="currentColor" viewBox="0 0 20 20">
