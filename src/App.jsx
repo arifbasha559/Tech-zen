@@ -14,11 +14,11 @@ function App() {
  return (
    
    
-    <div className={`${blog.colors.bg} ${blog.colors.color} min-h-screen min-w-56 overflow-x-hidden`}>
+    <div className={`${blog.colors.bg} ${blog.colors.color} lg:px-10 transition-colors duration-500 min-h-screen min-w-56`}>
 
    <Router>
     <div className="w-full">
-
+      
      {/* Rendering the Navbar component */}
      <Navbar />
      <Routes>
