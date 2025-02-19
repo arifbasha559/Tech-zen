@@ -17,7 +17,7 @@ const BlogState = (props) => {
       setColors({
         color: "text-white",
         border: 'border-white/50',
-        bg: 'bg-[#021526]'
+        bg: 'bg-black'
       })
       setTheme(!theme);
     } else {

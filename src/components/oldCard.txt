@@ -1,0 +1,21 @@
+// <div key={s} className={` card hover:scale-105  h-auto overflow-hidden ${(blog.colors.bg == 'bg-black') ? "shadow-[#32323298]" : "shadow-white"} ${(blog.colors.bg == 'bg-black') ? "shadow-3xl" : "shadow-4xl"} col-span-12 lg:col-span-3 rounded-lg  transition-all duration-500 border ${blog.colors.border} ${(blog.colors.bg == 'bg-black') ? "bg-black text-white" : "bg-white text-black "}  `} >
+                  //   <div className="  overflow-hidden">
+                  //     <img className="object-cover object-center w-full h-full  hover:scale-125  transition-transform duration-300" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Card image" />
+                  //   </div>
+                  //   <div className="h-fit ">
+
+                  //   <div className="px-2 py-2">
+                  //     <div className={`font-bold ${blog.colors.color} text-base mb-1`}>Title</div>
+                  //     <div className={`${(blog.colors.bg != 'bg-black') ? " text-black" : " text-white/50 "}`}>
+
+                  //     <p className={` text-xs`}>
+                  //       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  //     </p>
+                  //     <p className={` text-xs mt-1`}>Author: John Doe</p>
+                  //     </div>
+                  //   </div>
+                  //   <div className="px-2 py-2 mb-2">
+                  //     <Link to="/" className={`w-fit px-3 py-2  rounded-lg ${(blog.colors.bg == 'bg-black') ? "bg-white text-black" : "bg-black text-white "}  ${(!blog.theme) ? 'hover:bg-white/70' : 'hover:bg-black/70'} text-center`} >read more</Link>
+                  //   </div>
+                  //   </div>
+                  // </div>
