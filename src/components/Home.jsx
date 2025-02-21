@@ -10,7 +10,7 @@ const Home = () => {
   const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const [currentDate, setCurrentDate] = useState("");
-  
+
   useEffect(() => {
     // Update the date and time every second
     const interval = setInterval(() => {
@@ -23,8 +23,6 @@ const Home = () => {
         day: "numeric",
         timeZone: "Asia/Kolkata",
       }).format(now);
-
-      
 
       setCurrentDate(formattedDate);
     }, 1000);
@@ -57,7 +55,6 @@ const Home = () => {
                 {/* Card Content */}
                 <div className="main-content flex-1">
                   <div className="header flex justify-end text-xs font-semibold text-gray-500">
-                    
                     <span>
                       <div>{currentDate}</div>
                     </span>
@@ -86,7 +83,7 @@ const Home = () => {
                           ? "bg-white text-black"
                           : "bg-black text-white"
                       }  ${
-                        !blog.theme ? "hover:bg-white/70" : "hover:bg-black/70"
+                        blog.theme ? "hover:bg-white/70" : "hover:bg-black/70"
                       } text-center`}
                     >
                       read more

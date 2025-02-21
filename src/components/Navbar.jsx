@@ -11,7 +11,7 @@ const Navbar = () => {
   const [btn, setBtn] = useState(false)
   const [search, setSearch] = useState('invisible')
   const location = useLocation()
-  const borbg = (!blog.theme?'after:bg-white before:bg-white':"after:bg-black before:bg-black");
+  const borbg = (blog.theme?'after:bg-white before:bg-white':"after:bg-black before:bg-black");
   const toggleSearch = () => {
     setBtn(!btn)
     if (btn == true) {
@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="flex gap-2 md:hidden">
 
           <form className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1  items-center w-4/5 justify-between  flex rounded-lg outline-none `}>
-            <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent w-full  ${(!blog.theme) ? 'placeholder-gray-500' : 'placeholder-black/40 '} mr-auto placeholder:text-sm   w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
+            <input type="text" name="search" id="searchdesk" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent w-full  ${(!blog.theme) ? 'placeholder-gray-500' : 'placeholder-black/40 '} mr-auto placeholder:text-sm   w-32 text-sm px-0.5 rounded-lg outline-none`}  />
             <button type="reset"  >
               <RxCross2 />
             </button>

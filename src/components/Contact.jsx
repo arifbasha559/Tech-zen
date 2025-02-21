@@ -1,9 +1,10 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import '../App.css'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { useContext } from 'react'
+import BlogContext from '../context/BlogContext'
 
 const Contact = () => {
+  const blog = useContext(BlogContext)
   return (
     <div className="container mx-auto p-4 flex flex-col md:flex-row justify-between items-center">
       <div className="w-full md:w-1/2 p-4">
@@ -12,41 +13,41 @@ const Contact = () => {
           Feel free to reach out to me if you have any questions, need help with a project, or just want to say hi!
         </p>
         <div className="mt-8 flex items-center">
-          <Link to="mailto: example@gmail.com" className="mr-4">
+          <Link to="mailto: example@gmail.com" className="mr-4 hover:text-red-500 transition-colors duration-300 ease-in-out">
             <FaEnvelope size={24} />
           </Link>
-          <Link to="https://github.com/username" className="mr-4">
+          <Link to="https://github.com/arifbasha559" className="mr-4 hover:text-green-500 transition-colors duration-300 ease-in-out">
             <FaGithub size={24} />
           </Link>
-          <Link to="https://www.linkedin.com/in/username/" className="mr-4">
+          <Link to="https://www.linkedin.com/in/arifbasha559/" className="mr-4 hover:text-blue-500 transition-colors duration-300 ease-in-out">
             <FaLinkedin size={24} />
           </Link>
-          <Link to="https://twitter.com/username" className="mr-4">
+          <Link to="https://twitter.com/arifbasha559" target='' className="mr-4 hover:text-blue-500 transition-colors duration-300 ease-in-out">
             <FaTwitter size={24} />
           </Link>
         </div>
       </div>
-      <div className="w-full md:w-1/2 p-4">
-        <form className="mt-4" action="https://formspree.io/f/xbjvqkzo" method="POST">
-          <div className="flex flex-col mb-4">
-            <label htmlFor="name" className="mb-2">
+      <div className="w-full md:w-1/2 p-4 transition-all duration-300 ease-in-out">
+        <form className="mt-4 transition-all duration-300 ease-in-out" action="https://formspree.io/f/xbjvqkzo" method="POST">
+          <div className="flex flex-col mb-4 transition-all duration-300 ease-in-out">
+            <label htmlFor="name" className="mb-2 transition-all duration-300 ease-in-out">
               Name
             </label>
-            <input type="text" name="name" id="name" className="border-2 p-2 rounded-md" />
+            <input type="text" name="name" id="name" className={`border-2 p-2 rounded-md ${blog.theme ? 'bg-black text-white' : 'bg-white text-black'} transition-all duration-300 ease-in-out`} />
           </div>
-          <div className="flex flex-col mb-4">
-            <label htmlFor="email" className="mb-2">
+          <div className="flex flex-col mb-4 transition-all duration-300 ease-in-out">
+            <label htmlFor="email" className="mb-2 transition-all duration-300 ease-in-out">
               Email
             </label>
-            <input type="email" name="_replyto" id="email" className="border-2 p-2 rounded-md" />
+            <input type="email" name="_replyto" id="email" className={`border-2 p-2 rounded-md ${blog.theme ? 'bg-black text-white' : 'bg-white text-black'} transition-all duration-300 ease-in-out`} />
           </div>
-          <div className="flex flex-col mb-4">
-            <label htmlFor="message" className="mb-2">
+          <div className="flex flex-col mb-4 transition-all duration-300 ease-in-out">
+            <label htmlFor="message" className="mb-2 transition-all duration-300 ease-in-out">
               Message
             </label>
-            <textarea name="message" id="message" className="border-2 p-2 rounded-md" rows={5} />
+            <textarea name="message" id="message" className={`border-2 p-2 rounded-md ${blog.theme ? 'bg-black text-white' : 'bg-white text-black'} transition-all duration-300 ease-in-out`} rows={5} />
           </div>
-          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
+          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300 ease-in-out">
             Send
           </button>
         </form>

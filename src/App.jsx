@@ -9,6 +9,7 @@ import BlogContext from "./context/BlogContext";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
+import "./App.css";
 function App() {
   const blog = useContext(BlogContext);
   // Returning the JSX code
@@ -41,3 +42,4 @@ function App() {
 
 // Exporting App as the default export
 export default App;
+
