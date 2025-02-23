@@ -24,7 +24,7 @@ const Login = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
       className="login-container flex items-center justify-center min-h-[80vh]"
     >
       <div className="w-96 rounded-lg shadow-lg p-6 ">

@@ -14,7 +14,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-console.log(blog.theme);
+// console.log(blog.theme);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,7 +34,7 @@ console.log(blog.theme);
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
       className={`flex flex-col items-center justify-center min-h-[80vh] ${bg}`}
     >
       <div className="w-96 rounded-lg shadow-lg p-6">

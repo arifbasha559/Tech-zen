@@ -39,12 +39,13 @@ const Navbar = () => {
   
   // console.log(blog.border.color);
   return (
-    <div className={`w-full transition-colors  duration-500  ${blog.colors.color} h-14 mb-2 border-b px-5 ${blog.colors.border} ${blog.colors.bg}   flex items-center justify-between sticky top-0 left-10 z-50 mx-auto`}>
+    <div className={`   ${blog.colors.color} h-14 mb-2 backdrop-blur-3xl border-b px-5 lg:px-0 ${blog.colors.border} ${blog.colors.bg}   flex items-center justify-between sticky top-0 left-10 z-50 mx-auto`}>
       <div className="logo ">
         <h2 title="TECH ZEN" className=" text-xl font-bruco font-extrabold tracking-wide text-nowrap md:mr-16 " >TECH ZEN</h2>
       </div>
-      <div className={`btn flex gap-2 lg:static absolute ${nav} text-sm font-medium -z-10 h-screen lg:h-fit ${blog.colors.bg} transition-all duration-500 lg:translate-y-0 flex-col justify-center items-center  w-screen lg:flex-row top-14 left-0  `}>
+      <div className={`btn flex gap-2 lg:static absolute ${nav} text-sm font-medium -z-10 py-20 lg:py-0 h-fit ${blog.colors.bg}  lg:translate-y-0 flex-col justify-center items-center  w-full lg:flex-row top-14 left-0  `}>
         <Link onClick={() => { closeMenu() }} to="/" className={`w-fit ${location.pathname==='/'?"activate":"" }  nav-link ${borbg} px-2 ${blog.colors.color}  py-0.5   text-center`} title="Home" >Home</Link>
+        <Link onClick={() => { closeMenu() }} to="/blog" className={`w-fit ${location.pathname==='/blog'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="Blog" >Blog</Link>
         <Link onClick={() => { closeMenu() }} to="/about" className={`w-fit ${location.pathname==='/about'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="About" >About</Link>
         <Link onClick={() => { closeMenu() }} to="/contact" className={`w-fit ${location.pathname==='/contact'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="Contact" >Contact</Link>
         <Link onClick={() => { closeMenu() }} to="/login" className={`w-fit ${location.pathname==='/login'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="LogIn" >Log In</Link>
@@ -54,7 +55,7 @@ const Navbar = () => {
         <div className="flex gap-2 md:hidden">
 
           <form className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1  items-center w-4/5 justify-between  flex rounded-lg outline-none `}>
-            <input type="text" name="search" id="searchdesk" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent w-full  ${(!blog.theme) ? 'placeholder-gray-500' : 'placeholder-black/40 '} mr-auto placeholder:text-sm   w-32 text-sm px-0.5 rounded-lg outline-none`}  />
+            <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent w-full  ${(!blog.theme) ? 'placeholder-gray-500' : 'placeholder-black/40 '} mr-auto placeholder:text-sm   w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
             <button type="reset"  >
               <RxCross2 />
             </button>
@@ -81,8 +82,8 @@ const Navbar = () => {
       </div>
       {/* big screen search button  */}
       <div className="search pl-3 py-1 flex gap-2 justify-between items-center  ">
-        <form className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1 hidden md:flex items-center rounded-lg outline-none ${search}  `}>
-          <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent ${(!blog.theme) ? 'placeholder-gray-500 ' : 'placeholder-black/40 '} placeholder:text-sm  w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
+        <form className={`${(blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1 hidden md:flex items-center rounded-lg outline-none ${search}  `}>
+          <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent ${(blog.theme) ? 'placeholder-gray-500 ' : 'placeholder-black/40 '} placeholder:text-sm  w-32 text-sm px-0.5  rounded-lg outline-none`} id="search" />
           <button type="reset"  >
             <RxCross2 />
           </button>

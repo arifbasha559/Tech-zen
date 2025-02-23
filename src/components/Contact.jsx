@@ -27,27 +27,27 @@ const Contact = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full md:w-1/2 p-4 transition-all duration-300 ease-in-out">
-        <form className="mt-4 transition-all duration-300 ease-in-out" action="https://formspree.io/f/xbjvqkzo" method="POST">
-          <div className="flex flex-col mb-4 transition-all duration-300 ease-in-out">
-            <label htmlFor="name" className="mb-2 transition-all duration-300 ease-in-out">
+      <div className="w-full md:w-1/2 p-4">
+        <form className="mt-4 " action="https://formspree.io/f/xbjvqkzo" method="POST">
+          <div className="flex flex-col mb-4 ">
+            <label htmlFor="name" className="mb-2 ">
               Name
             </label>
-            <input type="text" name="name" id="name" className={`border-2 p-2 rounded-md ${blog.theme ? 'bg-black text-white' : 'bg-white text-black'} transition-all duration-300 ease-in-out`} />
+            <input type="text" name="name" id="name" className={`border-2 p-2 rounded-md ${blog.theme ? 'bg-black text-white' : 'bg-white text-black'} `} />
           </div>
-          <div className="flex flex-col mb-4 transition-all duration-300 ease-in-out">
-            <label htmlFor="email" className="mb-2 transition-all duration-300 ease-in-out">
+          <div className="flex flex-col mb-4 ">
+            <label htmlFor="email" className="mb-2 ">
               Email
             </label>
-            <input type="email" name="_replyto" id="email" className={`border-2 p-2 rounded-md ${blog.theme ? 'bg-black text-white' : 'bg-white text-black'} transition-all duration-300 ease-in-out`} />
+            <input type="email" name="_replyto" id="email" className={`border-2 p-2 rounded-md ${blog.theme ? 'bg-black text-white' : 'bg-white text-black'} `} />
           </div>
-          <div className="flex flex-col mb-4 transition-all duration-300 ease-in-out">
-            <label htmlFor="message" className="mb-2 transition-all duration-300 ease-in-out">
+          <div className="flex flex-col mb-4 ">
+            <label htmlFor="message" className="mb-2 ">
               Message
             </label>
-            <textarea name="message" id="message" className={`border-2 p-2 rounded-md ${blog.theme ? 'bg-black text-white' : 'bg-white text-black'} transition-all duration-300 ease-in-out`} rows={5} />
+            <textarea name="message" id="message" className={`border-2 p-2 rounded-md ${blog.theme ? 'bg-black text-white' : 'bg-white text-black'} `} rows={5} />
           </div>
-          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition-all duration-300 ease-in-out">
+          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md ">
             Send
           </button>
         </form>

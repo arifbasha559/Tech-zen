@@ -10,24 +10,23 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import "./App.css";
+import Blog from "./components/Blog";
 function App() {
   const blog = useContext(BlogContext);
   // Returning the JSX code
 
   return (
     <div
-      className={`${blog.colors.bg} ${blog.colors.color} lg:px-10 transition-colors duration-500 min-h-screen min-w-56`}
+      className={`${blog.colors.bg} ${blog.colors.color} lg:px-10  min-h-screen min-w-56`}
     >
       <Router>
         <div className="w-full">
           {/* Rendering the Navbar component */}
           <Navbar />
           <Routes>
-            {/* Defining the root route */}
             <Route index element={<Home />} />
-            {/* Defining the about route */}
             <Route path="about" element={<About />} />
-            {/* Defining the contact route */}
+            <Route path="Blog" element={<Blog />} />
             <Route path="contact" element={<Contact />} />
             <Route path="login" element={<Login />} /> {/* Login route */}
             <Route path="register" element={<Register />} /> {/* Register route */}
