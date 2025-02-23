@@ -66,7 +66,7 @@ const Card = (props) => {
         >
           read more
         </Link>
-        <div className="img">
+        <div className={`img p-1 rounded-full bg-[#e81cff] from-[#ff1b6b] to-[#45caff] `}>
           <img className="w-16 h-16 rounded-full shadow-2xl"
             src={props.author.profile_image}
             alt="Card image"
