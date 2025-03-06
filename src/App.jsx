@@ -6,11 +6,12 @@ import Contact from "./components/Contact";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 import BlogContext from "./context/BlogContext";
-import Register from "./components/Register";
-import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import "./App.css";
 import Blog from "./components/Blog";
+import News from "./components/News";
+import Tools from "./components/Tools";
+import Tutorial from "./components/Tutorial";
 function App() {
   const blog = useContext(BlogContext);
   // Returning the JSX code
@@ -27,10 +28,11 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="Blog" element={<Blog />} />
+            <Route path="news" element={<News />} />
+            <Route path="tools" element={<Tools />} />
+            <Route path="tutorials" element={<Tutorial />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="login" element={<Login />} /> {/* Login route */}
-            <Route path="register" element={<Register />} /> {/* Register route */}
-            <Route path="*" element={<NotFound />} /> {/* 404 route */}
+             <Route path="*" element={<NotFound />} /> {/* 404 route */}
           
           </Routes>
         </div>

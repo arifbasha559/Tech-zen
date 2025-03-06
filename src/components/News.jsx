@@ -1,13 +1,11 @@
 import { useContext, useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import "../App.css";
 import BlogContext from "../context/BlogContext";
 import Card from "./Card";
 import Loader from "./Loader";
 
-const Blog = () => {
+const News = () => {
   const blog = useContext(BlogContext);
-  const location = useLocation();
 
   const [stories, setStories] = useState([]);
   const [page, setPage] = useState(1);
@@ -15,7 +13,6 @@ const Blog = () => {
   const [loading, setLoading] = useState(false);
 
   // Get the search query from the URL
-  const query = new URLSearchParams(location.search).get("search");
 
   // Fetch Stories (Debounced)
   useEffect(() => {
@@ -23,9 +20,7 @@ const Blog = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `https://dev.to/api/articles?page=${page}&per_page=50&${
-            query ? `tag=${query.toLowerCase()}` : ""
-          }`
+          `https://dev.to/api/articles?page=${page}&per_page=50&tag=news`
         );
         const data = await response.json();
 
@@ -48,7 +43,7 @@ const Blog = () => {
     const debounceFetch = setTimeout(fetchStories, 300);
 
     return () => clearTimeout(debounceFetch); // Cleanup on unmount or state change
-  }, [page, query]); // Refetch when `page` or `query` changes
+  }, [page]); // Refetch when `page` or `query` changes
 
   // Handle Page Change
   const handlePageChange = (newPage) => {
@@ -63,7 +58,7 @@ const Blog = () => {
       <h1
         className={`font-bruco w-full lg:text-8xl md:text-7xl text-5xl font-black lg:leading-snug border-b-2 mb-8 text-center ${blog.colors.border}`}
       >
-        TECH ZEN<span className="flex justify-center items-center text-3xl py-5 "> Blogs</span>
+        TECH ZEN<span className="flex justify-center items-center text-3xl py-5 "> News</span>
       </h1>
 
       {/* Blog Grid */}
@@ -161,4 +156,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default News;

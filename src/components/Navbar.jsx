@@ -4,14 +4,25 @@ import { IconContext } from "react-icons";
 import { FaSearch } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate, } from "react-router-dom";
 import BlogContext from "../context/BlogContext";
+import { TbWorldSearch } from 'react-icons/tb';
 const Navbar = () => {
   const blog = useContext(BlogContext);
   const [btn, setBtn] = useState(false)
   const [search, setSearch] = useState('invisible')
   const location = useLocation()
   const borbg = (blog.theme?'after:bg-white before:bg-white':"after:bg-black before:bg-black");
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent page reload
+    if (query.trim()) {
+      navigate(`/blog?search=${encodeURIComponent(query)}`); // Navigate with query param
+    }
+    
+  };
   const toggleSearch = () => {
     setBtn(!btn)
     if (btn == true) {
@@ -44,27 +55,27 @@ const Navbar = () => {
         <h2 title="TECH ZEN" className=" text-xl font-bruco font-extrabold tracking-wide text-nowrap md:mr-16 " >TECH ZEN</h2>
       </div>
       <div className={`btn flex gap-2 lg:static absolute ${nav} text-sm font-medium -z-10 py-20 lg:py-0 h-fit ${blog.colors.bg}  lg:translate-y-0 flex-col justify-center items-center  w-full lg:flex-row top-14 left-0  `}>
-        <Link onClick={() => { closeMenu() }} to="/" className={`w-fit ${location.pathname==='/'?"activate":"" }  nav-link ${borbg} px-2 ${blog.colors.color}  py-0.5   text-center`} title="Home" >Home</Link>
+        <Link onClick={() => { closeMenu() }} to="/" className={`w-fit lg:ml-10 ml-0 ${location.pathname==='/' ||location.pathname==='/tools' || location.pathname==='/tutorials' ?"activate":"" }  nav-link ${borbg} px-2 ${blog.colors.color}  py-0.5   text-center`} title="Home" >Home</Link>
         <Link onClick={() => { closeMenu() }} to="/blog" className={`w-fit ${location.pathname==='/blog'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="Blog" >Blog</Link>
+        <Link onClick={() => { closeMenu() }} to="/news" className={`w-fit ${location.pathname==='/news'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="Blog" >News</Link>
         <Link onClick={() => { closeMenu() }} to="/about" className={`w-fit ${location.pathname==='/about'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="About" >About</Link>
         <Link onClick={() => { closeMenu() }} to="/contact" className={`w-fit ${location.pathname==='/contact'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="Contact" >Contact</Link>
-        <Link onClick={() => { closeMenu() }} to="/login" className={`w-fit ${location.pathname==='/login'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="LogIn" >Log In</Link>
-        <Link onClick={() => { closeMenu() }} to="/register" className={`w-fit ${location.pathname==='/register'?"activate":"" } nav-link ${borbg} px-2 ${blog.colors.color} py-0.5 rounded-lg  text-center`} title="register" >Register</Link>
-       
+        
         {/* mobile screen search button  */}
-        <div className="flex gap-2 md:hidden">
+        <div className="flex justify-center items-center md:hidden">
 
-          <form className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1  items-center w-4/5 justify-between  flex rounded-lg outline-none `}>
-            <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent w-full  ${(!blog.theme) ? 'placeholder-gray-500' : 'placeholder-black/40 '} mr-auto placeholder:text-sm   w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
+          <form onSubmit={handleSubmit} value={query}
+        onChange={(e) => setQuery(e.target.value)} className={`${(blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-2 py-2  items-center w-4/5 justify-between  flex rounded-lg gap-5 outline-none `}>
+            <input type="text" name="search" placeholder="Search Anything..."  title="Search Anything..." autoComplete='off' className={`bg-transparent w-full  ${(!blog.theme) ? 'placeholder-gray-500' : 'placeholder-black/40 '} mr-auto placeholder:text-sm   w-32 text-sm px-0.5 rounded-lg outline-none`} id="search" />
             <button type="reset"  >
               <RxCross2 />
             </button>
-          </form>
-          <button type="submit"  className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  p-1.5 items-center rounded-full outline-none md:hidden flex`}>
+            <button type="submit" onClick={() => { closeMenu() }} >
             <IconContext.Provider value={{ className: `${blog.colors.color}` }}>
-              <FaSearch />
-            </IconContext.Provider>
-          </button>
+            <TbWorldSearch />
+          </IconContext.Provider>
+            </button>
+          </form>
         </div>
         {/* big screen theme changable buttton  */}
         <button onClick={() => { blog.toggleTheme(), closeMenu() }}
@@ -82,13 +93,19 @@ const Navbar = () => {
       </div>
       {/* big screen search button  */}
       <div className="search pl-3 py-1 flex gap-2 justify-between items-center  ">
-        <form className={`${(blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-1 py-1 hidden md:flex items-center rounded-lg outline-none ${search}  `}>
-          <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent ${(blog.theme) ? 'placeholder-gray-500 ' : 'placeholder-black/40 '} placeholder:text-sm  w-32 text-sm px-0.5  rounded-lg outline-none`} id="search" />
+        <form onSubmit={handleSubmit} value={query}
+        onChange={(e) => setQuery(e.target.value)} className={`${(blog.theme) ? 'bg-white/20' : 'bg-black/20'}  px-2 py-1 hidden md:flex items-center rounded-lg outline-none gap-2 ${search}  `}>
+          <input type="text" name="search" placeholder="Search Anything..." title="Search Anything..." autoComplete='off' className={`bg-transparent ${(blog.theme) ? 'placeholder-gray-500 ' : 'placeholder-black/40 '} placeholder:text-sm  w-5/6 text-sm px-0.5  rounded-lg outline-none`} id="search" />
           <button type="reset"  >
             <RxCross2 />
           </button>
+          <button type="submit"  >
+          <IconContext.Provider value={{ className: `${blog.colors.color} text-sm` }}>
+          <TbWorldSearch />
+          </IconContext.Provider>
+          </button>
         </form>
-        <button type="button" onClick={() => { toggleSearch() }} className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  p-1.5 items-center rounded-full outline-none hidden md:flex`}>
+        <button type="Submit" onClick={() => { toggleSearch() }} className={`${(!blog.theme) ? 'bg-white/20' : 'bg-black/20'}  p-1.5 items-center rounded-full outline-none hidden md:flex`}>
           <IconContext.Provider value={{ className: `${blog.colors.color}` }}>
             <FaSearch />
           </IconContext.Provider>
@@ -117,3 +134,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
