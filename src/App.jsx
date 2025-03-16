@@ -12,30 +12,32 @@ import Blog from "./components/Blog";
 import News from "./components/News";
 import Tools from "./components/Tools";
 import Tutorial from "./components/Tutorial";
+import Footer from "./components/Footer";
 function App() {
   const blog = useContext(BlogContext);
   // Returning the JSX code
 
   return (
     <div
-      className={`${blog.colors.bg} ${blog.colors.color} lg:px-10  min-h-screen min-w-56`}
+      className={`${blog.colors.bg} ${blog.colors.color}  min-h-screen min-w-56`}
     >
       <Router>
-        <div className="w-full">
+        <div className="w-full  ">
           {/* Rendering the Navbar component */}
           <Navbar />
           <Routes>
             <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="Blog" element={<Blog />} />
-            <Route path="news" element={<News />} />
-            <Route path="tools" element={<Tools />} />
-            <Route path="tutorials" element={<Tutorial />} />
-            <Route path="contact" element={<Contact />} />
-             <Route path="*" element={<NotFound />} /> {/* 404 route */}
+            <Route path="about" element={<div className="lg:px-10"><About /></div>} />
+            <Route path="Blog" element={<div className="lg:px-10"><Blog /></div>} />
+            <Route path="news" element={<div className="lg:px-10"><News /></div>} />
+            <Route path="tools" element={<div className="lg:px-10"><Tools /></div>} />
+            <Route path="tutorials" element={<div className="lg:px-10"><Tutorial /></div>} />
+            <Route path="contact" element={<div className="lg:px-10"><Contact /></div>} />
+             <Route path="*" element={<div className="lg:px-10"><NotFound /></div>} /> {/* 404 route */}
           
           </Routes>
         </div>
+          {location.pathname === "/" && <Footer />}
       </Router>
     </div>
   );

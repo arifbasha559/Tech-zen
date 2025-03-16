@@ -56,7 +56,8 @@ const Blog = () => {
       setPage(newPage);
     }
   };
-
+  console.log(stories.length);
+  
   return (
     <div className={`w-full px-4 sm:px-6 lg:px-8 ${blog.theme}`}>
       {/* Header */}
@@ -90,7 +91,7 @@ const Blog = () => {
       </div>
 
       {/* Pagination */}
-      {!loading && stories.length > 0 && (
+      {!loading && stories.length > 49 && (
           <div className="flex items-center justify-center space-x-2 py-20 max-w-[80vh] mx-auto">
             {page > 1 && (
               <button
