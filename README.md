@@ -17,8 +17,8 @@ Join our community, share your knowledge, and stay updated with the ever-evolvin
 # Tech-Zen 🌐  
 **A Modern Blog Platform for Tech Enthusiasts**
 
-![Tech-Zen Banner](https://via.placeholder.com/1200x400.png?text=Tech-Zen+Banner)  
-*(You can add a custom banner image here)*
+![Tech-Zen Banner](./src/assets/banner.png)  
+
 
 ---
 
