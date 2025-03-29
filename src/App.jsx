@@ -13,6 +13,8 @@ import News from "./components/News";
 import Tools from "./components/Tools";
 import Tutorial from "./components/Tutorial";
 import Footer from "./components/Footer";
+import Terms from "./components/Terms";
+import Privacy from "./components/Privacy";
 function App() {
   const blog = useContext(BlogContext);
   // Returning the JSX code
@@ -33,11 +35,13 @@ function App() {
             <Route path="tools" element={<div className="lg:px-10"><Tools /></div>} />
             <Route path="tutorials" element={<div className="lg:px-10"><Tutorial /></div>} />
             <Route path="contact" element={<div className="lg:px-10"><Contact /></div>} />
+            <Route path="terms" element={<div className="lg:px-10"><Terms /></div>} />
+            <Route path="privacy" element={<div className="lg:px-10"><Privacy /></div>} />
              <Route path="*" element={<div className="lg:px-10"><NotFound /></div>} /> {/* 404 route */}
           
           </Routes>
         </div>
-          {location.pathname === "/" && <Footer />}
+          {(location.pathname === "/" ||location.pathname == "/" )&& <Footer />}
       </Router>
     </div>
   );
