@@ -15,6 +15,7 @@ import Tutorial from "./components/Tutorial";
 import Footer from "./components/Footer";
 import Terms from "./components/Terms";
 import Privacy from "./components/Privacy";
+import Advertisement from "./components/Advertisement";
 function App() {
   const blog = useContext(BlogContext);
   // Returning the JSX code
@@ -27,8 +28,9 @@ function App() {
         <div className="w-full  ">
           {/* Rendering the Navbar component */}
           <Navbar />
+          <Advertisement />
           <Routes>
-            <Route index element={<Home />} />
+            <Route index element={<Blog />} />
             <Route path="about" element={<div className="lg:px-10"><About /></div>} />
             <Route path="Blog" element={<div className="lg:px-10"><Blog /></div>} />
             <Route path="news" element={<div className="lg:px-10"><News /></div>} />

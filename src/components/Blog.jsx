@@ -64,7 +64,7 @@ const Blog = () => {
       <h1
         className={`font-bruco w-full lg:text-8xl md:text-7xl text-5xl font-black lg:leading-snug border-b-2 mb-8 text-center ${blog.colors.border}`}
       >
-        TECH ZEN<span className="flex justify-center items-center text-3xl py-5 "> Blogs</span>
+        TECH ZEN<span className="flex justify-center items-end text-3xl py-5 "> <span className="text-4xl">   B</span>logs</span>
       </h1>
 
       {/* Blog Grid */}
