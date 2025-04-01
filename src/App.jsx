@@ -30,7 +30,7 @@ function App() {
           <Navbar />
           <Advertisement />
           <Routes>
-            <Route index element={<Blog />} />
+            <Route index element={<Home />} />
             <Route path="about" element={<div className="lg:px-10"><About /></div>} />
             <Route path="Blog" element={<div className="lg:px-10"><Blog /></div>} />
             <Route path="news" element={<div className="lg:px-10"><News /></div>} />
