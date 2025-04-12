@@ -1,0 +1,42 @@
+[
+  {
+    "_id": { "$oid": "67f807e030c7b227dc05c819" },
+    "name": "Arif",
+    "username": "arif",
+    "email": "arif@example.com",
+    "password": "$2b$10$C.z5Etyw34BMvTcNYEsR9uMS52w.4NWgXNc0XpeQQVW6QsxHXJjEG",
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67f807e030c7b227dc05c820" },
+    "name": "Sara Khan",
+    "username": "sarak",
+    "email": "sara.khan@example.com",
+    "password": "$2b$10$QYqKjL3PdZxU0quc7lHgCeFlT5ZKUqBgnJqPpmpKQIt5eWtnFZnxy",
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67f807e030c7b227dc05c821" },
+    "name": "John Doe",
+    "username": "johnd",
+    "email": "john.doe@example.com",
+    "password": "$2b$10$ThpT4y3xD9gBx8z1p4EtXOiQHDePdl1zE4Ltp9g8YZ8v8qJElOEXm",
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67f807e030c7b227dc05c822" },
+    "name": "Emily Zhang",
+    "username": "emilyz",
+    "email": "emily.z@example.com",
+    "password": "$2b$10$KDcv5clBsZqDzXvVmEvHbO4aVMBliN23FQXyHpX/VOfA4QABFf0lq",
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67f807e030c7b227dc05c823" },
+    "name": "Liam Patel",
+    "username": "liamp",
+    "email": "liam.patel@example.com",
+    "password": "$2b$10$zk3pFZHP2BCBRVmpJPevUO8pFqBEx8XrZSTBpL4wnOnnbQ/qhVZjW",
+    "__v": 0
+  }
+]

@@ -1,0 +1,638 @@
+[
+  {
+    "_id": {
+      "$oid": "67f810a1307805e3f51d037d"
+    },
+    "title": "Advanced Node.js Performance Optimization",
+    "tag_list": [
+      "nodejs",
+      "performance",
+      "backend"
+    ],
+    "author": {
+      "$oid": "67f8081a30c7b227dc05c81c"
+    },
+    "description": "Learn how to scale your Node.js applications by understanding event loops, clustering, and memory management.",
+    "content": "Node.js is powerful but can become sluggish if not optimized. Start by understanding the event loop and how asynchronous callbacks impact performance. Tools like 'pm2' and the 'cluster' module allow scaling Node apps across CPU cores. Profiling memory and preventing memory leaks using Chrome DevTools and Node’s built-in modules like 'v8' and 'process' are essential. Don’t forget caching strategies (Redis, in-memory) and minimizing synchronous code. Real-world monitoring tools such as New Relic or Datadog help keep your app healthy in production.",
+    "published_timestamp": {
+      "$date": "2025-04-07T07:00:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-07T07:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-07T07:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f810e1307805e3f51d0380"
+    },
+    "title": "The Rise of Quantum Computing in Cybersecurity",
+    "tag_list": [
+      "quantum",
+      "cybersecurity",
+      "encryption"
+    ],
+    "author": {
+      "$oid": "67f8081a30c7b227dc05c81c"
+    },
+    "description": "Quantum computers pose new challenges and opportunities in cybersecurity, particularly in encryption methods.",
+    "content": "Quantum computing is redefining what’s possible in tech. In cybersecurity, this means traditional encryption methods like RSA could become obsolete. Post-quantum cryptography is an emerging field aiming to develop algorithms that can withstand quantum attacks. Companies like Google and IBM are exploring quantum-safe solutions. While we are still in early stages, developers should begin preparing for a transition to quantum-resistant systems, especially in critical infrastructure, banking, and national defense applications.",
+    "published_timestamp": {
+      "$date": "2025-04-08T08:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-08T08:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-08T08:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81121307805e3f51d0381"
+    },
+    "title": "Understanding the Fundamentals of AI Ethics",
+    "tag_list": [
+      "ai",
+      "ethics",
+      "technology"
+    ],
+    "author": {
+      "$oid": "67f8081a30c7b227dc05c81c"
+    },
+    "description": "AI ethics is becoming a central concern as artificial intelligence integrates deeper into society and decision-making.",
+    "content": "As AI continues to advance, so do the concerns surrounding bias, fairness, transparency, and accountability. Ethical AI isn’t just about avoiding harm—it's about actively designing systems that promote good. Developers should embrace fairness audits, dataset transparency, and user consent. Governments and organizations must establish frameworks to regulate AI development and deployment while balancing innovation with protection. OpenAI, Google DeepMind, and the EU are leading efforts in shaping the future of responsible AI.",
+    "published_timestamp": {
+      "$date": "2025-04-09T10:15:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-09T10:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-09T10:15:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0382"
+    },
+    "title": "Mastering Web Accessibility for Developers",
+    "tag_list": [
+      "web",
+      "accessibility",
+      "frontend"
+    ],
+    "author": {
+      "$oid": "67f8081a30c7b227dc05c81c"
+    },
+    "description": "Accessibility isn’t optional—it's essential. Build inclusive websites that everyone can use, regardless of ability.",
+    "content": "Accessibility in web development ensures that websites are usable by people with various disabilities. From semantic HTML and proper contrast ratios to ARIA roles and keyboard navigation, developers have many tools to create inclusive experiences. Using screen reader testing, Lighthouse audits, and automated a11y tools can help catch major issues. Not only is it good practice—it's also increasingly a legal requirement across countries. Web developers should prioritize accessibility just as they would performance or SEO.",
+    "published_timestamp": {
+      "$date": "2025-04-10T09:00:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-10T09:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-10T09:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0383"
+    },
+    "title": "The Future of React: Concurrent Features Explained",
+    "tag_list": [
+      "react",
+      "frontend",
+      "javascript"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c819"
+    },
+    "description": "Explore React's concurrent rendering features and how they revolutionize user experience in modern web apps.",
+    "content": "React's concurrent features represent a paradigm shift in how we think about rendering. Features like Suspense, transitions, and selective hydration allow apps to stay responsive even during heavy rendering workloads. The new useTransition hook lets you mark non-urgent state updates, while useDeferredValue helps defer re-rendering for non-critical UI parts. These features work together to prevent jank and provide smoother user experiences, especially on lower-end devices. Adopting these patterns requires rethinking some traditional React practices but pays off in perceived performance.",
+    "published_timestamp": {
+      "$date": "2025-03-15T11:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-03-15T11:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-15T11:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0384"
+    },
+    "title": "Building Microservices with Node.js and Docker",
+    "tag_list": [
+      "backend",
+      "nodejs",
+      "docker",
+      "microservices"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c820"
+    },
+    "description": "A practical guide to designing and deploying scalable microservices architecture using Node.js containers.",
+    "content": "Microservices architecture breaks applications into small, independent services that communicate via APIs. Using Node.js with Docker provides an excellent platform for building such systems. Each service gets its own container with isolated dependencies and scaling capabilities. Key considerations include service discovery (using tools like Consul), API gateways (Kong or Traefik), and distributed tracing (Jaeger). While powerful, microservices introduce complexity in deployment and monitoring, so they should only be used when truly needed. Properly implemented, they enable independent scaling, technology diversity, and faster development cycles.",
+    "published_timestamp": {
+      "$date": "2025-03-20T14:15:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-03-20T14:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-20T14:15:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0385"
+    },
+    "title": "Machine Learning for Frontend Developers",
+    "tag_list": [
+      "ml",
+      "javascript",
+      "tensorflow"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c821"
+    },
+    "description": "How frontend developers can leverage TensorFlow.js to bring machine learning directly to the browser.",
+    "content": "TensorFlow.js brings machine learning capabilities to JavaScript developers, enabling models to run directly in the browser. This opens possibilities like real-time image classification, pose detection, and natural language processing without server roundtrips. Pre-trained models like MobileNet and PoseNet can be easily integrated into React/Vue applications. The WebGL backend accelerates computations using the GPU. While browser-based ML has limitations compared to server-side solutions, it offers privacy advantages (data never leaves the device) and instant feedback. Start with simple tasks like sentiment analysis or object detection before tackling custom model training.",
+    "published_timestamp": {
+      "$date": "2025-03-25T10:45:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-03-25T10:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-25T10:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0386"
+    },
+    "title": "Advanced CSS Grid Layout Patterns",
+    "tag_list": [
+      "css",
+      "frontend",
+      "design"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c822"
+    },
+    "description": "Beyond basics: creative layouts and responsive solutions using CSS Grid's powerful features.",
+    "content": "CSS Grid enables complex layouts that were previously impossible or required heavy JavaScript. The subgrid feature (now widely supported) allows nested grids to align with their parent. Use minmax() with auto-fill for responsive grids that adapt to available space without media queries. The masonry layout (experimental in some browsers) creates Pinterest-style flowing grids. For artistic designs, combine grid with clip-path and shape-outside. Remember accessibility - ensure grid reordering doesn't create confusing tab orders. Grid works exceptionally well with CSS custom properties for dynamic layouts. Pair it with aspect-ratio for consistent sizing of grid items across breakpoints.",
+    "published_timestamp": {
+      "$date": "2025-04-01T08:20:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-01T08:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-01T08:20:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0387"
+    },
+    "title": "Serverless Authentication Best Practices",
+    "tag_list": [
+      "auth",
+      "serverless",
+      "security"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c823"
+    },
+    "description": "Implementing secure authentication in serverless architectures using AWS Cognito and Auth0.",
+    "content": "Serverless authentication requires different patterns than traditional server-based systems. Services like AWS Cognito and Auth0 handle the heavy lifting, but proper implementation is crucial. Always use HTTPS, secure cookies with SameSite and HttpOnly flags, and implement CSRF protection. For APIs, prefer short-lived JWT tokens with refresh token rotation. The OAuth 2.0 device flow works well for IoT and CLI applications. Passwordless authentication (magic links, biometrics) reduces attack surfaces. Monitor for anomalous login attempts and implement step-up authentication for sensitive operations. Remember that serverless cold starts can affect auth latency, so design with appropriate timeouts.",
+    "published_timestamp": {
+      "$date": "2025-04-05T13:10:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-05T13:10:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-05T13:10:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0388"
+    },
+    "title": "GitOps: The Future of Infrastructure Management",
+    "tag_list": [
+      "devops",
+      "gitops",
+      "kubernetes",
+      "automation"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c819"
+    },
+    "description": "How GitOps principles are revolutionizing infrastructure as code and CI/CD pipelines.",
+    "content": "GitOps extends infrastructure as code by making Git the single source of truth for both application code and infrastructure. Tools like ArgoCD and Flux automatically synchronize your Kubernetes clusters with Git repository states. This approach provides version control, audit trails, and rollback capabilities for infrastructure changes. Key principles include declarative configuration, automated deployment, and continuous reconciliation. Implementing GitOps reduces configuration drift and enables faster, more reliable deployments. Teams can now manage production infrastructure with the same workflows they use for application code.",
+    "published_timestamp": {
+      "$date": "2025-04-12T10:00:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-12T10:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-12T10:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0389"
+    },
+    "title": "Web Components in 2025: Beyond the Hype",
+    "tag_list": [
+      "web",
+      "components",
+      "javascript",
+      "frontend"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c820"
+    },
+    "description": "Practical guide to using Web Components with modern frameworks like React and Vue.",
+    "content": "Web Components have finally matured with broad browser support and framework interoperability. The key technologies - Custom Elements, Shadow DOM, and HTML Templates - now work seamlessly with React, Vue, and Angular. New features like Declarative Shadow DOM simplify server-side rendering. For state management, consider pairing them with lightweight libraries like LitElement or Stencil. While not replacing frameworks, Web Components excel at creating framework-agnostic UI libraries and microfrontends. Best practices include proper accessibility implementation, CSS encapsulation strategies, and progressive enhancement for non-JS environments.",
+    "published_timestamp": {
+      "$date": "2025-04-15T14:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-15T14:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-15T14:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0390"
+    },
+    "title": "Generative AI for Content Creation: Ethical Considerations",
+    "tag_list": [
+      "ai",
+      "ethics",
+      "generative",
+      "content"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c821"
+    },
+    "description": "Balancing innovation and responsibility when using tools like GPT-5 and DALL-E 3.",
+    "content": "The latest generative AI models can produce remarkably human-like text, images, and code. However, responsible use requires addressing several ethical concerns: copyright implications of training data, disclosure requirements for AI-generated content, and preventing misuse for disinformation. Technical solutions like watermarking AI outputs and implementing content verification systems are emerging. Developers should establish clear guidelines for AI-assisted work, maintain human oversight for critical decisions, and respect opt-out requests from content creators. The AI community is developing standards like model cards and datasheets to improve transparency.",
+    "published_timestamp": {
+      "$date": "2025-04-18T09:15:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-18T09:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-18T09:15:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0391"
+    },
+    "title": "Zero Trust Architecture: Implementation Guide",
+    "tag_list": [
+      "cybersecurity",
+      "zerotrust",
+      "auth",
+      "network"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c822"
+    },
+    "description": "Step-by-step migration from perimeter-based security to Zero Trust models.",
+    "content": "Zero Trust security assumes no implicit trust for any user or device, even inside corporate networks. Implementation begins with identity verification (multi-factor authentication everywhere), device health checks, and microsegmentation. Key technologies include identity-aware proxies, continuous authentication systems, and encrypted tunnels for all communications. Migrate gradually by first protecting crown jewel assets, then expanding to other systems. Challenges include legacy system integration and user experience considerations. Successful Zero Trust deployments reduce attack surfaces by 80% while enabling secure remote work and cloud adoption.",
+    "published_timestamp": {
+      "$date": "2025-04-20T13:45:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-20T13:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-20T13:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0392"
+    },
+    "title": "Quantum Computing for Developers: First Steps",
+    "tag_list": [
+      "quantum",
+      "computing",
+      "emerging",
+      "algorithms"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c823"
+    },
+    "description": "Introduction to Q# and quantum programming concepts for classical developers.",
+    "content": "While full-scale quantum computers remain years away, developers can start learning quantum programming today. Microsoft's Q# language and IBM's Qiskit provide accessible entry points. Fundamental concepts include qubits (which can exist in superposition), quantum gates (like Hadamard and CNOT), and algorithms like Grover's search and Shor's factorization. Current quantum computers are noisy intermediate-scale quantum (NISQ) devices with limited qubits. Practical near-term applications include optimization problems, material science simulations, and specialized cryptography. The quantum development workflow involves simulating circuits classically before running on actual quantum hardware.",
+    "published_timestamp": {
+      "$date": "2025-04-22T11:20:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-22T11:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-22T11:20:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0393"
+    },
+    "title": "Securing CI/CD Pipelines: From Code to Production",
+    "tag_list": [
+      "devops",
+      "security",
+      "cicd",
+      "sast"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c819"
+    },
+    "description": "Comprehensive security practices for modern deployment pipelines.",
+    "content": "Modern CI/CD pipelines require multiple security checkpoints: static application security testing (SAST) during commits, dependency scanning for vulnerabilities, infrastructure-as-code validation, and runtime protection. Tools like GitLeaks prevent secret exposure, while OPA policies enforce security standards. Implement artifact signing with Cosign and SBOM generation to track software provenance. Critical practices include isolating build environments, rotating credentials frequently, and auditing pipeline access. Security should shift left in the pipeline without creating bottlenecks. Case studies show organizations reducing deployment-related vulnerabilities by 90% with these measures.",
+    "published_timestamp": {
+      "$date": "2025-04-25T15:10:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-25T15:10:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-25T15:10:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0394"
+    },
+    "title": "Advanced Web Performance: Beyond Lighthouse Scores",
+    "tag_list": [
+      "web",
+      "performance",
+      "optimization",
+      "corewebvitals"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c820"
+    },
+    "description": "Deep dive into real-user metrics and runtime optimization techniques.",
+    "content": "While Lighthouse provides great lab data, true performance understanding requires real-user monitoring (RUM). Tools like SpeedCurve and CrUX Dashboard reveal how actual users experience your site across devices and networks. Advanced techniques include speculative loading with `<link rel=preload>`, optimizing JavaScript delivery with module/nomodule patterns, and fine-tuning hydration strategies for SSR. The new Navigation API allows performance-aware route transitions. Remember that perceived performance often matters more than metrics - skeleton screens, progressive loading, and proper loading states dramatically improve user experience. Prioritize optimizing the 95th percentile users, not just ideal conditions.",
+    "published_timestamp": {
+      "$date": "2025-04-28T10:45:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-28T10:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-28T10:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0395"
+    },
+    "title": "ML Model Deployment Patterns for Production",
+    "tag_list": [
+      "ai",
+      "mlops",
+      "deployment",
+      "kubernetes"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c821"
+    },
+    "description": "Comparing serving architectures for machine learning models at scale.",
+    "content": "Production ML deployment requires different considerations than experimental models. Common patterns include: 1) Real-time serving via REST/gRPC endpoints using frameworks like TensorFlow Serving or Triton, 2) Batch processing for offline predictions, 3) Edge deployment with optimized models (TensorFlow Lite, ONNX Runtime). Key challenges include versioning, A/B testing, and monitoring model drift. Kubernetes-based solutions like Kubeflow provide orchestration, while feature stores ensure consistent inputs between training and inference. Always implement comprehensive logging to detect performance degradation and establish rollback procedures for failed model updates.",
+    "published_timestamp": {
+      "$date": "2025-05-01T14:00:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-05-01T14:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-05-01T14:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0396"
+    },
+    "title": "Modern Phishing Defense Strategies",
+    "tag_list": [
+      "cybersecurity",
+      "phishing",
+      "awareness",
+      "email"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c822"
+    },
+    "description": "Beyond spam filters: technical and human defenses against evolving phishing attacks.",
+    "content": "Today's phishing attacks bypass traditional email filters using techniques like homograph domains, QR codes, and multi-channel approaches (email+SMS+voice). Effective defenses include: DMARC/DKIM/SPF for email authentication, AI-powered content analysis, and browser-integrated protection like Google Safe Browsing. User training should focus on recognizing subtle cues rather than just 'don't click links'. Technical measures like hardware security keys (FIDO2) prevent credential theft even when users are tricked. Organizations should conduct regular phishing simulations and implement fast response playbooks for when breaches occur. The most effective programs reduce click rates from 30% to under 2%.",
+    "published_timestamp": {
+      "$date": "2025-05-05T09:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-05-05T09:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-05-05T09:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0397"
+    },
+    "title": "AI-Powered DevOps: Auto-Remediation Systems",
+    "tag_list": [
+      "ai",
+      "devops",
+      "observability",
+      "automation"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c823"
+    },
+    "description": "How machine learning transforms incident response and system maintenance.",
+    "content": "Next-gen DevOps tools now leverage AI to predict and prevent outages before they occur. Systems like PagerDuty's AIOps analyze historical incidents to suggest root causes and remediation steps. More advanced implementations automatically roll back faulty deployments, scale resources preemptively, or patch vulnerabilities during maintenance windows. Key components include: 1) Unified observability data (metrics, logs, traces), 2) Anomaly detection models, 3) Safe execution environments for automated actions. While powerful, these systems require careful guardrails - humans should remain in the loop for critical systems and novel failure modes. Early adopters report 40-60% reductions in incident resolution times.",
+    "published_timestamp": {
+      "$date": "2025-05-08T16:20:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-05-08T16:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-05-08T16:20:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0381"
+    },
+    "title": "Mastering Web Accessibility for Developers",
+    "tag_list": [
+      "web",
+      "accessibility",
+      "frontend"
+    ],
+    "author": {
+      "$oid": "67f8081a30c7b227dc05c81c"
+    },
+    "description": "Accessibility isn't optional—it's essential. Build inclusive websites that everyone can use, regardless of ability.",
+    "content": "Web accessibility ensures digital content is usable by people with visual, auditory, motor, or cognitive disabilities. Start with semantic HTML - proper heading structures, landmark roles, and meaningful link text. For visual impairments, maintain a minimum 4.5:1 contrast ratio and allow text resizing up to 200% without breaking layouts. Keyboard navigation is critical: ensure all interactive elements are focusable and have visible focus states. ARIA (Accessible Rich Internet Applications) supplements HTML when native semantics aren't sufficient - use aria-label for unlabeled elements, aria-live for dynamic content, and proper roles for complex widgets. Always test with screen readers like NVDA or VoiceOver. Remember that accessibility benefits everyone - closed captions help non-native speakers, keyboard navigation aids power users, and clear structure improves SEO. The Web Content Accessibility Guidelines (WCAG) 2.2 provide concrete success criteria to meet AA compliance standards.",
+    "published_timestamp": {
+      "$date": "2025-04-10T09:00:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-10T09:00:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-10T09:00:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51d0323"
+    },
+    "title": "The Future of React: Concurrent Features Explained",
+    "tag_list": [
+      "react",
+      "frontend",
+      "javascript"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c819"
+    },
+    "description": "Explore React's concurrent rendering features and how they revolutionize user experience in modern web apps.",
+    "content": "React's concurrent rendering introduces groundbreaking capabilities for smoother user experiences. The core concept involves interruptible rendering - React can pause, resume, or abandon work based on priority. The useTransition hook marks non-urgent state updates, allowing high-priority updates (like typing feedback) to interrupt slower renders (like search results). Concurrent Suspense enables graceful loading states - wrap lazy-loaded components in Suspense boundaries with fallback UIs. Selective hydration prioritizes hydrating interactive components first while leaving static parts for later. The new startTransition API helps maintain responsiveness during heavy renders by yielding to the browser. These features require understanding transition classifications: urgent updates (clicks, inputs) vs transitions (data fetching, complex UI changes). Implement error boundaries at strategic levels since Suspense fallbacks can trigger frequently. While complex, these patterns eliminate jank in data-heavy applications and improve Time to Interactive metrics significantly.",
+    "published_timestamp": {
+      "$date": "2025-03-15T11:30:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-03-15T11:30:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-15T11:30:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51a0384"
+    },
+    "title": "Building Microservices with Node.js and Docker",
+    "tag_list": [
+      "backend",
+      "nodejs",
+      "docker",
+      "microservices"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c820"
+    },
+    "description": "A practical guide to designing and deploying scalable microservices architecture using Node.js containers.",
+    "content": "A well-architected Node.js microservice system begins with domain-driven design - each service should encapsulate a single business capability. Use lightweight Express/Fastify servers for HTTP services and specialized workers for background tasks. Containerization best practices include: multi-stage builds to minimize image size (300MB → 30MB), health checks with --health-cmd flags, and proper signal handling for graceful shutdowns. Implement service discovery using Consul or etcd, and consider API gateways like Kong for routing and rate limiting. For interservice communication, prefer asynchronous messaging (RabbitMQ, Kafka) over HTTP when possible. Critical patterns include: circuit breakers (prevent cascading failures), sagas (manage distributed transactions), and event sourcing (maintain data consistency). Monitoring requires distributed tracing (Jaeger/Zipkin), aggregated logging (ELK stack), and custom metrics (Prometheus). Remember the microservices premium - this architecture introduces operational complexity that only pays off at scale, so start monolith-first and decompose strategically.",
+    "published_timestamp": {
+      "$date": "2025-03-20T14:15:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-03-20T14:15:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-20T14:15:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51a0385"
+    },
+    "title": "Machine Learning for Frontend Developers",
+    "tag_list": [
+      "ml",
+      "javascript",
+      "tensorflow"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c821"
+    },
+    "description": "How frontend developers can leverage TensorFlow.js to bring machine learning directly to the browser.",
+    "content": "TensorFlow.js democratizes machine learning by enabling model execution in the browser. Start with pre-trained models: use MobileNet for image classification, PoseNet for body position detection, or Universal Sentence Encoder for NLP tasks. The WebGL backend accelerates computations using the GPU - a ResNet-50 model that takes 8s on CPU completes in 300ms on a mid-range GPU. For custom models, convert Python-trained models using the TensorFlow.js converter. Practical applications include: real-time image filters (style transfer), accessibility enhancements (automatic alt text generation), and intelligent form validation (sentiment analysis). Key considerations: model size affects initial load (use quantization), browser compatibility varies (WebGL 2.0 preferred), and privacy is enhanced since data never leaves the device. The tf.data API helps manage training data, while vis.js provides model visualization. For production, implement progressive enhancement - provide fallbacks when WebGL isn't available and monitor inference performance across devices.",
+    "published_timestamp": {
+      "$date": "2025-03-25T10:45:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-03-25T10:45:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-03-25T10:45:00.000Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67f81162307805e3f51a0386"
+    },
+    "title": "Advanced CSS Grid Layout Patterns",
+    "tag_list": [
+      "css",
+      "frontend",
+      "design"
+    ],
+    "author": {
+      "$oid": "67f807e030c7b227dc05c822"
+    },
+    "description": "Beyond basics: creative layouts and responsive solutions using CSS Grid's powerful features.",
+    "content": "Modern CSS Grid enables previously impossible layouts without JavaScript. The subgrid feature (now widely supported) allows nested grids to inherit parent track definitions - perfect for card components with variable content heights. Combine grid-template-areas with named lines for readable, maintainable layouts. For responsive designs, use minmax() with auto-fill: grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) creates fluid grids that adapt to container size. The masonry layout (experimental in Firefox) automatically positions items vertically like Pinterest. Advanced techniques include: aspect-ratio property for consistent sizing, content-visibility: auto for performance optimization, and @container queries for component-level responsive design. For artistic layouts, experiment with grid + clip-path combinations or shape-outside for text wrapping. Accessibility considerations: ensure grid reordering with order property doesn't create confusing tab sequences, and maintain logical source order for screen readers. Pair Grid with CSS Scroll Snap for magazine-style layouts with smooth scrolling sections.",
+    "published_timestamp": {
+      "$date": "2025-04-01T08:20:00.000Z"
+    },
+    "createdAt": {
+      "$date": "2025-04-01T08:20:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-04-01T08:20:00.000Z"
+    },
+    "__v": 0
+  }
+]

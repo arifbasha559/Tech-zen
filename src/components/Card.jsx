@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
 import BlogContext from "../context/BlogContext";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import banner from "../assets/banner.png";
 import "../App.css";
+import { Link } from "react-router-dom";
 const Card = (props) => {
   const blog = useContext(BlogContext);
-  //    console.log(props.category);
-  const tag = props.category;
+  const tag = props.category; 
   return (
     <div
-      className={`card w-full max-w-sm min-h-[250px] px-6 py-3 ${
+      className={`card w-full max-w-sm min-h-[250px] px-6 py-3 z-10 ${
         blog.colors.bg !== "bg-black"
           ? "bg-gradient-to-b from-[#F0F4FF] to-[#E6F9FF] text-gray-800"
           : "bg-gradient-to-b from-[#212121] to-[#212121] text-white"
@@ -30,11 +30,14 @@ const Card = (props) => {
             </div>
           </span>
         </div>
-        <p className="heading text-base font-semibold mt-4 mb-4" title={props.title}>
+        <p
+          className="heading text-base font-semibold mt-4 mb-4"
+          title={props.title}
+        >
           {props.title.split(" ").slice(0, 8).join(" ")}....
         </p>
-        <div className="categories flex gap-2 overflow-x-auto tag"> 
-          {tag.map((tag, index) => { 
+        <div className="categories flex gap-2 overflow-x-auto tag">
+          {tag.map((tag, index) => {
             return [
               index <= 2 ? (
                 <span
@@ -49,13 +52,16 @@ const Card = (props) => {
             ];
           })}
         </div>
-        <p className="description my-3 text-sm font-semibold text-gray-500" title={props.description}>
+        <p
+          className="description my-3 text-sm font-semibold text-gray-500"
+          title={props.description}
+        >
           {props.description.split(" ").slice(0, 10).join(" ")}.....
         </p>
       </div>
       <div className="footer mb-3 w-full flex items-center justify-between">
-        <Link
-          to={props.link} taget="_blank"
+        <button
+         onClick={props.onReadMore}
           className={`w-fit px-3 py-1  rounded-lg ${
             blog.colors.bg == "bg-black"
               ? "bg-white text-black"
@@ -66,18 +72,24 @@ const Card = (props) => {
           `}
         >
           read more
-        </Link>
-        <div className={`img p-1 rounded-full  bg-[radial-gradient(circle,#e81cff,#6a00f4)] `}>
-          <img className="w-16 h-16  rounded-full shadow-2xl  "
-            src={props.author.profile_image}
-            alt={props.author.name}
+        </button>
+        <div
+          className={`img p-1 rounded-full  bg-[radial-gradient(circle,#e81cff,#6a00f4)] `}
+        >
+          <img
+            className="w-16 h-16  rounded-full shadow-2xl  "
+            src={banner}
+            // alt={props.author.name}
           />
         </div>
       </div>
 
-      <div className="footer text-xs font-semibold text-gray-500">
+      <div className="footer text-xs font-semibold text-gray-500 hover:underline underline-offset-2">
+        <Link to={`/profile/${props.author.username}`} className="flex items-center gap-2">
         By {props.author.name}
+        </Link>
       </div>
+      
     </div>
   );
 };
@@ -89,6 +101,5 @@ Card.propTypes = {
   description: PropTypes.string,
   author: PropTypes.object,
 };
-
 
 export default Card;

@@ -11,7 +11,7 @@ const BlogState = (props) => {
   const [theme, setTheme] = useState(
     JSON.parse(localStorage.getItem("theme")) ?? false
   );
-
+  
   useEffect(() => {
     if (theme) {
       setColors({
