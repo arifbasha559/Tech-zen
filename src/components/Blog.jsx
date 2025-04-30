@@ -10,6 +10,7 @@ import { IconContext } from "react-icons";
 import { RxCross2 } from "react-icons/rx";
 import { toast, ToastContainer } from "react-toastify";
 import BlogContent from "./BlogContent";
+import { Helmet } from "react-helmet";
 
 const Blog = (props) => {
   const blog = useContext(BlogContext);
@@ -26,13 +27,13 @@ const Blog = (props) => {
 
   const query = new URLSearchParams(location.search).get("search");
 
-    
-    
   const fetchStories = async () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/posts/`);
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/posts/`
+      );
       const data = await response.json();
 
       data.sort(
@@ -127,7 +128,7 @@ const Blog = (props) => {
           ) : (
             stories.map((article, index) => (
               <>
-              
+                
                 <Card
                   key={index}
                   index={index}
@@ -139,7 +140,6 @@ const Blog = (props) => {
                   posts={article}
                   onReadMore={() => setSelectedPost(article)}
                 />
-                
               </>
             ))
           )}
@@ -147,9 +147,13 @@ const Blog = (props) => {
       </div>
       {selectedPost && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
-            <BlogContent posts={selectedPost} onClose={() => setSelectedPost(null)} userData={props.userData}/>
-          </div>
-         ) }
+          <BlogContent
+            posts={selectedPost}
+            onClose={() => setSelectedPost(null)}
+            userData={props.userData}
+          />
+        </div>
+      )}
 
       {!loading && stories.length > 49 && (
         <div className="flex items-center justify-center space-x-2 py-20 max-w-[80vh] mx-auto">

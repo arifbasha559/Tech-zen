@@ -87,7 +87,7 @@ const { theme } = useContext(BlogContext);
   return (
     <div className="max-w-2xl mx-auto p-4 md:p-6">
       <Helmet>
-        <title>Tech-Zen | Create New Post</title>
+        <title>Tech-Zen | Create New Blog</title>
         <meta name="description" content="Create a new blog post on Tech-Zen" />
       </Helmet>
 

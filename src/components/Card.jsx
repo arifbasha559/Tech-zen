@@ -4,17 +4,21 @@ import { useContext } from "react";
 import banner from "../assets/banner.png";
 import "../App.css";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 const Card = (props) => {
   const blog = useContext(BlogContext);
   const tag = props.category; 
   return (
+    
     <div
       className={`card w-full max-w-sm min-h-[250px] px-6 py-3 z-10 ${
         blog.colors.bg !== "bg-black"
           ? "bg-gradient-to-b from-[#F0F4FF] to-[#E6F9FF] text-gray-800"
           : "bg-gradient-to-b from-[#212121] to-[#212121] text-white"
       } border-2 border-transparent rounded-xl flex flex-col cursor-default transform transition-transform duration-300 ease-in-out sm:hover:scale-105`}
+    
     >
+     
       {/* Card Content */}
       <div className="main-content flex-1">
         <div className="header flex justify-end text-xs font-semibold text-gray-500">

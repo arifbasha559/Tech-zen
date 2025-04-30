@@ -39,9 +39,22 @@ const BlogContent = ({ posts: post, onClose, userData }) => {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4">
-      <Helmet>
-        <title>Blog - {post.title}</title>
-      </Helmet>
+       <Helmet>
+                  <title>
+                    {post.title.substring(0, 15)} | Tech-Zen
+                  </title>
+                  <meta
+                    name="description"
+                    content={post.content.substring(0, 160)}
+                  />
+                  <meta property="og:title" content={post.title} />
+                  <meta property="og:description" content={post.description} />
+                  <meta property="og:type" content="article" />
+                  <link
+                    rel="canonical"
+                    href={`https://tech-zen.vercel.app/posts/${post}`}
+                  />
+                </Helmet>
       <div
         ref={contentRef}
         className={`relative w-full max-w-4xl transition-all duration-200 scale-95 hover:scale-100 transform ${

@@ -2,13 +2,12 @@
 import "../App.css";
 import { useContext, useState } from "react";
 import { IconContext } from "react-icons";
-import { IoMenu } from "react-icons/io5";
+import { IoCreateOutline, IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import BlogContext from "../context/BlogContext";
 import { TbWorldSearch } from "react-icons/tb";
 import banner from "../assets/banner.png";
-import { is } from "date-fns/locale";
 const Navbar = ({ userData }) => {
   const blog = useContext(BlogContext);
   const location = useLocation();
@@ -191,7 +190,7 @@ const Navbar = ({ userData }) => {
         >
           {/* Avatar / Trigger */}
           <button
-          onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen(!isOpen)}
             className={` items-center justify-center  w-8 h-8 lg:size-10 ${
               userData != null ? "flex" : "hidden"
             } `}
@@ -229,16 +228,27 @@ const Navbar = ({ userData }) => {
                     <p className="text-sm text-gray-400">{userData.email}</p>
                   </div>
                 </div>
-
-                {userData.username && (
-                  <Link
-                    to={`/profile/${userData.username}`}
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="mt-2 block w-fit mx-auto  px-3 py-1 text-sm rounded-lg border border-transparent hover:bg-gradient-to-r from-blue-600 to-purple-600 duration-300 transition"
-                  >
-                    View Profile
-                  </Link>
-                )}
+                <div className="flex justify-between">
+                  {userData.username && (
+                    <Link
+                      to={`/profile/${userData.username}`}
+                      onClick={() => setIsOpen(!isOpen)}
+                      className="mt-2 flex w-fit items-center  px-3 py-1 text-sm rounded-lg border border-transparent hover:bg-gradient-to-r from-blue-600 to-purple-600 duration-300 transition"
+                    >
+                      View Profile
+                    </Link>
+                  )}
+                  {userData.username && (
+                    <Link
+                      to={`/create`}
+                      onClick={() => setIsOpen(!isOpen)}
+                      className="mt-2  w-fit  flex items-center gap2 px-3 py-1 text-sm rounded-lg border border-transparent hover:bg-gradient-to-r from-blue-600 to-purple-600 duration-300 transition"
+                    >
+                      <IoCreateOutline className="text-xl " />
+                      Create Blog
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           )}
