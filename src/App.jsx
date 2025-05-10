@@ -3,7 +3,12 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import BlogContext from "./context/BlogContext";
 import NotFound from "./components/NotFound";
@@ -16,6 +21,8 @@ import Auth from "./components/Auth";
 import Profile from "./components/Profile";
 import { ToastContainer } from "react-toastify";
 import Create from "./components/Create";
+import Footer from "./components/Footer";
+import BlogContent from "./components/BlogContent";
 
 function App() {
   const blog = useContext(BlogContext);
@@ -33,8 +40,8 @@ function App() {
       const fetchUser = async () => {
         try {
           // 192.168.131.37/
-          const url=import.meta.env.VITE_API_URL;
-          const res = await fetch(url+"/api/auth/me", {
+          const url = import.meta.env.VITE_API_URL;
+          const res = await fetch(url + "/api/auth/me", {
             method: "GET",
             headers: {
               Authorization: `Bearer ${userId}`,
@@ -92,6 +99,14 @@ function App() {
               }
             />
             <Route
+              path="/post/:postId"
+              element={
+                <PrivateRoute>
+                  <BlogContent userData={userData} />
+                </PrivateRoute>
+              }
+            />
+            <Route
               path="/create"
               element={
                 <PrivateRoute>
@@ -99,19 +114,56 @@ function App() {
                 </PrivateRoute>
               }
             />
-            <Route path="about" element={<div className="lg:px-10"><About /></div>} />
-            <Route path="Blog" element={<div className="lg:px-10"><Blog userData={localStorage.getItem("token")?userData:null} /></div>} />
-            <Route path="terms" element={<div className="lg:px-10"><Terms /></div>} />
-            <Route path="privacy" element={<div className="lg:px-10"><Privacy /></div>} />
-            <Route path="*" element={<div className="lg:px-10"><NotFound /></div>} />
+            <Route
+              path="about"
+              element={
+                <div className="lg:px-10">
+                  <About />
+                </div>
+              }
+            />
+            <Route
+              path="Blog"
+              element={
+                <div className="lg:px-10 flex flex-col gap-10">
+                  <Blog
+                    userData={localStorage.getItem("token") ? userData : null}
+                  />{" "}
+                  <Footer />
+                </div>
+              }
+            />
+            <Route
+              path="terms"
+              element={
+                <div className="lg:px-10">
+                  <Terms />
+                </div>
+              }
+            />
+            <Route
+              path="privacy"
+              element={
+                <div className="lg:px-10">
+                  <Privacy />
+                </div>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <div className="lg:px-10">
+                  <NotFound />
+                </div>
+              }
+            />
           </Routes>
         </div>
       </Router>
-      <ToastContainer position="bottom-right"/>
+      <ToastContainer position="bottom-right" />
     </div>
   );
 }
 
 // Exporting App as the default export
 export default App;
-

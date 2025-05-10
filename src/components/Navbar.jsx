@@ -40,7 +40,7 @@ const Navbar = ({ userData }) => {
     }
   };
 
-  // console.log(blog.border.color);
+  console.log(location.pathname);
   return (
     <div
       className={`  ${blog.colors.bg} ${blog.colors.color} h-14   border-b px-5 lg:px-5 ${blog.colors.border}  flex items-center justify-between sticky top-0 left-10 z-50 mx-auto`}
@@ -62,9 +62,7 @@ const Navbar = ({ userData }) => {
           }}
           to="/"
           className={`w-fit  ${
-            location.pathname === "/" ||
-            location.pathname === "/tools" ||
-            location.pathname === "/tutorials"
+            location.pathname === "/"
               ? "activate"
               : ""
           }  nav-link ${borbg} px-2 ${blog.colors.color}  py-0.5   text-center`}
@@ -92,7 +90,8 @@ const Navbar = ({ userData }) => {
           }}
           to="/blog"
           className={`w-fit ${
-            location.pathname === "/blog" ? "activate" : ""
+            location.pathname === "/blog"||
+            location.pathname.includes("post") ? "activate" : ""
           } nav-link ${borbg} px-2 ${
             blog.colors.color
           } py-0.5 rounded-lg  text-center`}

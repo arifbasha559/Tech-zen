@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, Fragment } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../App.css";
 import BlogContext from "../context/BlogContext";
@@ -9,10 +9,9 @@ import { TbWorldSearch } from "react-icons/tb";
 import { IconContext } from "react-icons";
 import { RxCross2 } from "react-icons/rx";
 import { toast, ToastContainer } from "react-toastify";
-import BlogContent from "./BlogContent";
 import { Helmet } from "react-helmet";
 
-const Blog = (props) => {
+const Blog = () => {
   const blog = useContext(BlogContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,8 +22,6 @@ const Blog = (props) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [sQuery, setSQuery] = useState("");
-  const [selectedPost, setSelectedPost] = useState(null);
-
   const query = new URLSearchParams(location.search).get("search");
 
   const fetchStories = async () => {
@@ -77,11 +74,30 @@ const Blog = (props) => {
       navigate(`?search=${encodeURIComponent(sQuery)}`);
     }
   };
-
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const searchImages = async () => {
+      try {
+        const response = await fetch(
+          `https://pixabay.com/api/?key=47897092-9c2f8cae15ca662cb2e33adf1&q=programming&per_page=200`
+        );
+        const data = await response.json();
+        // console.log (data);
+        setData(data.hits); // Set the state with the fetched data
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    };
+    searchImages();  }, [])
   return (
     <div className={`w-full px-4 sm:px-6 lg:px-8 relative ${blog.theme}`}>
+      <Helmet>
+        <title>
+          Blogs | Tech-Zen - A place to learn and grow
+        </title>
+      </Helmet>
       <h1
-        className={`font-bruco w-full lg:text-8xl md:text-7xl text-5xl font-black lg:leading-snug border-b-2 mb-8 text-center ${blog.colors.border}`}
+        className={`font-bruco w-full lg:text-8xl md:text-7xl text-5xl font-black lg:leading-snug border-b-2  text-center ${blog.colors.border}`}
       >
         TECH ZEN
         <div className="text-3xl md:py-5 relative flex justify-center flex-col gap-5 items-center">
@@ -120,40 +136,65 @@ const Blog = (props) => {
       </h1>
 
       <div className="flex w-full">
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 mx-auto justify-center my-4">
+        <div className="grid gap-6 grid-cols-12 md:grid-rows- md:auto-rows-auto mx-auto justify-between mb-4">
           {loading ? (
             <Loader />
           ) : error ? (
-            <div className="text-red-500 text-center"></div>
+            <div key="1" className="text-red-500 text-center"></div>
           ) : (
             stories.map((article, index) => (
-              <>
-                
-                <Card
-                  key={index}
-                  index={index}
-                  title={article.title}
-                  description={article.description}
-                  category={article.tag_list}
-                  date={article.published_timestamp}
-                  author={article.author}
-                  posts={article}
-                  onReadMore={() => setSelectedPost(article)}
-                />
-              </>
+              <Fragment key={index}>
+              
+                {index === 0 && (
+                  <h3
+                    key={index}
+                    className={`text-3xl h-full py-10  col-span-full self-center font-bold px-2 ${blog.colors.color}`}
+                  >
+                    Recent Blog Posts
+                  </h3>
+                )}
+               <div className={`col-span-12 h-full  ${
+  index === 0
+    ? "md:col-span-6 md:row-span-2 "
+    : index === 1
+    ? "md:col-span-6 md:row-span-1 md:col-start-7 md:row-start-2"
+    : index === 2
+    ? "md:col-span-6 md:row-span-1 md:col-start-7 md:row-start-3"
+    : index === 3
+    ? "md:col-span-12 md:row-span-1 md:row-start-4 md:row-end-6"
+    : index >= 4
+    ? "md:col-span-4 md:row-span-"  // Apply to ALL 4+
+    : ""
+}`}>
+                  <Card
+                    key={index}
+                    index={index}
+                    title={article.title}
+                    content={article.content}
+                    description={article.description}
+                    category={article.tag_list}
+                    date={article.published_timestamp}
+                    author={article.author}
+                    posts={article}
+                    image={data[index]?.webformatURL}
+                    link={`/post/${article._id}`}     
+                    location={location.pathname} 
+                  />
+                </div>
+                {index === 2 && (
+                  <h3
+                    key={index}
+                    className={`text-3xl self-center col-span-full row-span-1 py-10  h-full font-bold px-2 ${blog.colors.color} `}
+                  >
+                    All Blog Posts
+                  </h3>
+                )}
+              </Fragment>
             ))
           )}
         </div>
       </div>
-      {selectedPost && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
-          <BlogContent
-            posts={selectedPost}
-            onClose={() => setSelectedPost(null)}
-            userData={props.userData}
-          />
-        </div>
-      )}
+      
 
       {!loading && stories.length > 49 && (
         <div className="flex items-center justify-center space-x-2 py-20 max-w-[80vh] mx-auto">

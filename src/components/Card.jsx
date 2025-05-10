@@ -1,109 +1,132 @@
-import PropTypes from "prop-types";
+/* eslint-disable react/prop-types */
 import BlogContext from "../context/BlogContext";
 import { useContext } from "react";
 import banner from "../assets/banner.png";
 import "../App.css";
+import { FaArrowUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 const Card = (props) => {
   const blog = useContext(BlogContext);
-  const tag = props.category; 
+  const tag = props.category;
+  const date = () => {
+    const rawDate = new Date(props.date);
+
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const dayName = days[rawDate.getUTCDay()]; // Use UTC methods for consistency
+
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    const monthName = months[rawDate.getUTCMonth()];
+
+    const formattedrawDate = `${dayName}, ${rawDate.getUTCDate()} ${monthName} ${rawDate.getUTCFullYear()}`;
+    return formattedrawDate;
+  };
+
   return (
-    
-    <div
-      className={`card w-full max-w-sm min-h-[250px] px-6 py-3 z-10 ${
-        blog.colors.bg !== "bg-black"
-          ? "bg-gradient-to-b from-[#F0F4FF] to-[#E6F9FF] text-gray-800"
-          : "bg-gradient-to-b from-[#212121] to-[#212121] text-white"
-      } border-2 border-transparent rounded-xl flex flex-col cursor-default transform transition-transform duration-300 ease-in-out sm:hover:scale-105`}
-    
-    >
-     
-      {/* Card Content */}
-      <div className="main-content flex-1">
-        <div className="header flex justify-end text-xs font-semibold text-gray-500">
-          <span>
-            <div>
-              {new Date(props.date).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-                hour: "numeric",
-                minute: "numeric",
-              })}
-            </div>
-          </span>
-        </div>
-        <p
-          className="heading text-base font-semibold mt-4 mb-4"
-          title={props.title}
-        >
-          {props.title.split(" ").slice(0, 8).join(" ")}....
-        </p>
-        <div className="categories flex gap-2 overflow-x-auto tag">
-          {tag.map((tag, index) => {
-            return [
-              index <= 2 ? (
-                <span
-                  key={index}
-                  className="bg-[#e81cff] px-3 py-1 font-semibold text-[.5rem] uppercase rounded-full text-white"
-                >
-                  {tag}
-                </span>
-              ) : (
-                ""
-              ),
-            ];
-          })}
-        </div>
-        <p
-          className="description my-3 text-sm font-semibold text-gray-500"
-          title={props.description}
-        >
-          {props.description.split(" ").slice(0, 10).join(" ")}.....
-        </p>
-      </div>
-      <div className="footer mb-3 w-full flex items-center justify-between">
-        <button
-         onClick={props.onReadMore}
-          className={`w-fit px-3 py-1  rounded-lg ${
-            blog.colors.bg == "bg-black"
-              ? "bg-white text-black"
-              : "bg-black text-white"
-          }  ${
-            blog.theme ? "hover:bg-white/70" : "hover:bg-black/70"
-          } text-center
-          `}
-        >
-          read more
-        </button>
+    <>
+      <Link
+        to={props.link}
+        className={`card-container  min-h-full text-left flex flex-col
+               justify-between rounded-lg hover:shadow-lg transition-all duration-200 hover:shadow-purple-600`}
+      >
         <div
-          className={`img p-1 rounded-full  bg-[radial-gradient(circle,#e81cff,#6a00f4)] `}
+          className={`flex ${
+            props.location == "/blog" && props.index > 0 && props.index < 4
+              ? "flex-row "
+              : "flex-col"
+          } justify-between h-full w-full cursor-pointer outline-none p-5 gap-6 items-center`}
         >
           <img
-            className="w-16 h-16  rounded-full shadow-2xl  "
-            src={banner}
-            // alt={props.author.name}
+            // src={banner}
+            src={props.image}
+            alt="Blog Post"
+            className={` aspect-[25/9] rounded-lg ${
+              props.location == "/blog" &&
+              (props.index === 0
+                ? "w-full"
+                : props.index > 0 && props.index < 4
+                ? "h-full w-1/2 object-center object-cover aspect-[16/9]"
+                : "h-2/3 w-full") // Apply to ALL 4+
+            } `}
           />
+          <div
+            className={`flex flex-col justify-between 
+            ${
+              props.location == "/blog" &&
+              (props.index === 0
+                ? "w-full"
+                : props.index > 0 && props.index < 4
+                ? "h-full w-1/2 "
+                : "h-2/5  w-full") // Apply to ALL 4+
+            }`}
+          >
+            <span className="text-sm  text-left flex gap-5 px-2 text-blue-500">
+              {date()}
+              <Link
+                to={`/profile/${props.author.username}`}>
+                <span className="text-sm hover:underline text-blue-500 font-semibold">
+                  {props.author.username}
+                </span>
+              </Link>            
+              </span>
+            <div className="title flex justify-between items-center mb-2">
+              <h2
+                className={`"text-xl font-bold text-left mb-2 ${blog.colors.color} "`}
+              >
+                {props.title.split(" ").slice(0, 5).join(" ")}....
+              </h2>
+              <FaArrowUp className="rotate-45 self-start" />
+            </div>
+            <p className="text-gray-400 mb-2 text-left">{props.description}</p>
+            <div className="flex  flex-col justify-between mt-auto">
+              <div className="flex space-x-2">
+                {tag.map((t, index) => {
+                  const colorMap = [
+                    "bg-red-100 text-red-800",
+                    "bg-blue-100 text-blue-800",
+                    "bg-green-100 text-green-800",
+                    "bg-yellow-100 text-yellow-800",
+                    "bg-purple-100 text-purple-800",
+                    "bg-pink-100 text-pink-800",
+                  ];
+                  return (
+                    <span
+                      key={index}
+                      className={`${
+                        colorMap[Math.floor(Math.random() * 6)]
+                      } font-medium px-2 py-1 rounded-full text-xs`}
+                    >
+                      {t}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="footer text-xs font-semibold text-gray-500 hover:underline underline-offset-2">
-        <Link to={`/profile/${props.author.username}`} className="flex items-center gap-2">
-        By {props.author.name}
-        </Link>
-      </div>
-      
-    </div>
+      </Link>
+    </>
   );
-};
-Card.propTypes = {
-  link: PropTypes.string,
-  date: PropTypes.string,
-  title: PropTypes.string,
-  category: PropTypes.array,
-  description: PropTypes.string,
-  author: PropTypes.object,
 };
 
 export default Card;
