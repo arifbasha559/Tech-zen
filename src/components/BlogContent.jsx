@@ -202,15 +202,36 @@ const BlogContent = () => {
             </div>
           </div>
           <div className="mt-4">
-            <h2 className="text-2xl font-bold mb-2">Content</h2>
-            <div className="flex flex-col ">
+            <h2 className="text-2xl font-bold mb-2">In Detail</h2>
+            <div className="flex flex-col gap-4 ">
 
             <p className={`${blog.colors.color}/70 `}>{post.content}</p>
+            <img
+            src={data[post.tag_list?.length]?.webformatURL}
+            alt="Blog Post"
+            className="w-full h-64 object-cover mb-4 rounded-lg"
+          />
             <p className={`${blog.colors.color}/70 `}>{post.content}</p>
-            <p className={`${blog.colors.color}/70 `}>{post.content}</p>
-            <p className={`${blog.colors.color}/70 `}>{post.content}</p>
-            <p className={`${blog.colors.color}/70 `}>{post.content}</p>
-            <p className={`${blog.colors.color}/70 `}>{post.content}</p>
+            <img
+            src={data[post.tag_list?.length]?.webformatURL}
+            alt="Blog Post"
+            className="w-full h-64 object-cover mb-4 rounded-lg"
+          /><p className={`${blog.colors.color}/70 `}>{post.content}</p>
+            <img
+            src={data[post.tag_list?.length]?.webformatURL}
+            alt="Blog Post"
+            className="w-full h-64 object-cover mb-4 rounded-lg"
+          /><p className={`${blog.colors.color}/70 `}>{post.content}</p>
+            <img
+            src={data[post.tag_list?.length]?.webformatURL}
+            alt="Blog Post"
+            className="w-full h-64 object-cover mb-4 rounded-lg"
+          /><p className={`${blog.colors.color}/70 `}>{post.content}</p>
+            <img
+            src={data[post.tag_list?.length]?.webformatURL}
+            alt="Blog Post"
+            className="w-full h-64 object-cover mb-4 rounded-lg"
+          /><p className={`${blog.colors.color}/70 `}>{post.content}</p>
             </div>
           </div>
         </div>
