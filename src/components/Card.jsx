@@ -47,48 +47,50 @@ const Card = (props) => {
       <Link
         to={props.link}
         className={`card-container  min-h-full text-left flex flex-col
-               justify-between rounded-lg hover:shadow-lg transition-all duration-200 hover:shadow-purple-600`}
+               justify-between rounded-lg group  ${
+                 blog.theme ? "" : "bg-blue-300/50 text-black "
+               } hover:shadow-lg transition-all duration-200 hover:shadow-purple-600`}
       >
         <div
           className={`flex ${
             props.location == "/blog" && props.index > 0 && props.index < 4
-              ? "flex-row "
-              : "flex-col"
+              ? "flex-row items-center  my-auto"
+              : "flex-col "
           } justify-between h-full w-full cursor-pointer outline-none p-5 gap-6 items-center`}
         >
           <img
             // src={banner}
             src={props.image}
             alt="Blog Post"
-            className={` aspect-[25/9] rounded-lg ${
-              props.location == "/blog" &&
-              (props.index === 0
+            className={` aspect-[16/9]  group-hover:  saturate-150 transition duration-500 ease-in-out rounded-lg ${
+              props.location == "/blog" && props.index === 0
                 ? "w-full"
-                : props.index > 0 && props.index < 4
-                ? "h-full w-1/2 object-center object-cover aspect-[16/9]"
-                : "h-2/3 w-full") // Apply to ALL 4+
+                : props.index === 3
+                ? "h-full w-1/2 object-center object-cover aspect-[20/9]"
+                : props.index > 0 && props.index < 3
+                ? "h-full w-1/2 object-center object-cover aspect-[13.5/9]"
+                : "h-3/6 w-full" // Apply to ALL 4+
             } `}
           />
           <div
-            className={`flex flex-col justify-between 
+            className={`flex flex-col  justify-between 
             ${
-              props.location == "/blog" &&
-              (props.index === 0
-                ? "w-full"
+              props.location == "/blog" && props.index === 0
+                ? "w-full "
                 : props.index > 0 && props.index < 4
-                ? "h-full w-1/2 "
-                : "h-2/5  w-full") // Apply to ALL 4+
+                ? "h-full w-1/2 gap-y-5"
+                : "h-3/6  w-full  " // Apply to ALL 4+
             }`}
           >
-            <span className="text-sm  text-left flex gap-5 px-2 text-blue-500">
+            <span className="text-sm  text-left flex gap-5  px-2 text-blue-500">
               {date()}
-              <Link
-                to={`/profile/${props.author.username}`}>
+              {" by "}
+              <div>
                 <span className="text-sm hover:underline text-blue-500 font-semibold">
                   {props.author.username}
                 </span>
-              </Link>            
-              </span>
+              </div>
+            </span>
             <div className="title flex justify-between items-center mb-2">
               <h2
                 className={`"text-xl font-bold text-left mb-2 ${blog.colors.color} "`}
@@ -98,7 +100,7 @@ const Card = (props) => {
               <FaArrowUp className="rotate-45 self-start" />
             </div>
             <p className="text-gray-400 mb-2 text-left">{props.description}</p>
-            <div className="flex  flex-col justify-between mt-auto">
+            <div className="flex  flex-col justify-between mt-auto mb-4">
               <div className="flex space-x-2">
                 {tag.map((t, index) => {
                   const colorMap = [

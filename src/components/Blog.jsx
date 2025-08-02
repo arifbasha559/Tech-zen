@@ -136,7 +136,7 @@ const Blog = () => {
       </h1>
 
       <div className="flex w-full">
-        <div className="grid gap-6 grid-cols-12 md:grid-rows- md:auto-rows-auto mx-auto justify-between mb-4">
+        <div className="grid gap-6 grid-cols-12 lg:grid-rows- lg:auto-rows-auto mx-auto justify-between mb-4">
           {loading ? (
             <Loader />
           ) : error ? (
@@ -155,15 +155,15 @@ const Blog = () => {
                 )}
                <div className={`col-span-12 h-full  ${
   index === 0
-    ? "md:col-span-6 md:row-span-2 "
+    ? "lg:col-span-6 lg:row-span-2 md:col-span-full md:row-span-1"
     : index === 1
-    ? "md:col-span-6 md:row-span-1 md:col-start-7 md:row-start-2"
+    ? "lg:col-span-6 lg:row-span-1 lg:col-start-7 lg:row-start-2"
     : index === 2
-    ? "md:col-span-6 md:row-span-1 md:col-start-7 md:row-start-3"
+    ? "lg:col-span-6 lg:row-span-1 lg:col-start-7 lg:row-start-3"
     : index === 3
-    ? "md:col-span-12 md:row-span-1 md:row-start-4 md:row-end-6"
+    ? "lg:col-span-12 lg:row-span-1 lg:row-start-4 lg:row-end-6"
     : index >= 4
-    ? "md:col-span-4 md:row-span-"  // Apply to ALL 4+
+    ? "lg:col-span-4 md:col-span-6"  // Apply to ALL 4+
     : ""
 }`}>
                   <Card
@@ -181,7 +181,7 @@ const Blog = () => {
                     location={location.pathname} 
                   />
                 </div>
-                {index === 2 && (
+                {index === 3 && (
                   <h3
                     key={index}
                     className={`text-3xl self-center col-span-full row-span-1 py-10  h-full font-bold px-2 ${blog.colors.color} `}

@@ -28,23 +28,20 @@ const Profile = (props) => {
   });
 
   const inputRef = useRef(null);
-  const url=import.meta.env.VITE_API_URL;
-  
+  const url = import.meta.env.VITE_API_URL;
+
   const fetchUserData = async (username) => {
     try {
       setLoading(true);
-      const res = await fetch(
-        url+"/api/posts/pro/" + username + "/",
-        {
-          method: "GET",
-        }
-      );
+      const res = await fetch(url + "/api/posts/pro/" + username + "/", {
+        method: "GET",
+      });
       if (!res.ok) {
         throw new Error("Failed to fetch user data");
       }
       const data = await res.json();
       console.log(data);
-      
+
       setUserPosts(data.posts);
       setUserInfo(data.user);
       setTempValues({
@@ -52,7 +49,7 @@ const Profile = (props) => {
         username: data.user.username,
       });
     } catch (err) {
-      toast.error("Server Error"+err.message, {
+      toast.error("Server Error" + err.message, {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -68,19 +65,16 @@ const Profile = (props) => {
   const updateUserInfo = async () => {
     try {
       setLoading(true);
-      const res = await fetch(
-        url+"/api/posts/pro/" + initialUsername + "/",
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify({
-            [editingField]: tempValues[editingField],
-          }),
-        }
-      );
+      const res = await fetch(url + "/api/posts/pro/" + initialUsername + "/", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          [editingField]: tempValues[editingField],
+        }),
+      });
 
       if (!res.ok) {
         throw new Error("Failed to update user info");
@@ -169,7 +163,22 @@ const Profile = (props) => {
       [field]: e.target.value,
     }));
   };
-
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const searchImages = async () => {
+      try {
+        const response = await fetch(
+          `https://pixabay.com/api/?key=47897092-9c2f8cae15ca662cb2e33adf1&q=programming&per_page=200`
+        );
+        const data = await response.json();
+        // console.log (data);
+        setData(data.hits); // Set the state with the fetched data
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    };
+    searchImages();
+  }, []);
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8 py-10">
       {loading ? (
@@ -249,6 +258,8 @@ const Profile = (props) => {
                   date={post.published_timestamp}
                   author={post.author}
                   onReadMore={() => setSelectedPost(post)}
+                  image={data[idx]?.webformatURL}
+                  link={`/post/${post._id}`}
                 />
               ))
             ) : (
@@ -257,11 +268,15 @@ const Profile = (props) => {
           </div>
         </>
       )}
-       {selectedPost && (
+      {selectedPost && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
-            <BlogContent posts={selectedPost} onClose={() => setSelectedPost(null) } userData={props.userData}/>
-          </div>
-         ) }
+          <BlogContent
+            posts={selectedPost}
+            onClose={() => setSelectedPost(null)}
+            userData={props.userData}
+          />
+        </div>
+      )}
     </div>
   );
 };

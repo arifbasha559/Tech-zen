@@ -17,6 +17,7 @@ const Create = ({ userData }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [tagInput, setTagInput] = useState("");
+  const [preview, setPreview] = useState(false);
   const navigate = useNavigate();
   const API_URL = import.meta.env.VITE_API_URL;
 
@@ -136,7 +137,11 @@ const Create = ({ userData }) => {
   }, []);
   return (
     <div className="grid grid-cols-10">
-      <div className="max-w-2xl mx-auto col-span-5 w-4/5 p-4 md:p-6">
+      <div
+        className={`max-w-2xl mx-auto lg:col-span-5 col-span-full ${
+          !preview ? "block" : "hidden"
+        } w-4/5 p-4 md:p-6`}
+      >
         <Helmet>
           <title>Tech-Zen | Create New Blog</title>
           <meta
@@ -216,13 +221,13 @@ const Create = ({ userData }) => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium  mb-1">Tags</label>
+            <label htmlFor="tags" className="block peer text-sm font-medium  mb-1">Tags</label>
             <div
               className={`max-w-full px-3 py-2 border-2 flex rounded-md h-fit overflow-auto flex-wrap ${
                 theme
                   ? "bg-blue-950/30 text-white placeholder-gray-400"
                   : "bg-blue-300/50 text-black placeholder-gray-600"
-              } hover:border-blue-500 focus:border-blue-500 transition-colors border-transparent outline-none`}
+              } peer-hover:border-blue-500 peer-focus:border-blue-500 hover:border-blue-500 focus:border-blue-500 transition-colors border-transparent outline-none`}
             >
               {formData.tags.map((tag, index) => (
                 <span
@@ -242,6 +247,7 @@ const Create = ({ userData }) => {
               <input
                 type="text"
                 value={tagInput}
+                id="tags"
                 onChange={(e) => setTagInput(e.target.value)}
                 onKeyDown={handleTagInput}
                 className={` outline-none  bg-transparent w-full inline  ${
@@ -258,6 +264,13 @@ const Create = ({ userData }) => {
           </div>
 
           <div className="flex justify-end space-x-3">
+            <button
+              type="button"
+              onClick={() => setPreview(!preview)}
+              className="px-4 block lg:hidden py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Preview
+            </button>
             <button
               type="button"
               onClick={() => navigate("/blog")}
@@ -308,16 +321,32 @@ const Create = ({ userData }) => {
           </div>
         </form>
       </div>
-      <div className="col-span-5">
-        <h2 className="text-4xl text-center m-auto py-4 underline text-blue-500 font-bruco">Preview</h2>
-        <div className={`col-span-5  mx-auto w-4/5  overflow-auto py-10 px-5 rounded-lg  ${
-                theme
-                  ? "bg-blue-950/50 text-white "
-                  : "bg-blue-300/50 text-black "
-              }`}>
-          <h1 className="text-3xl font-bold mb-4">
+      <div
+        className={`lg:col-span-5 w-full mx-auto ${
+          preview ? "block" : "hidden"
+        } col-span-full lg:block`}
+      >
+        <h2 className="text-4xl text-center m-auto py-4 underline text-blue-500 font-bruco">
+          Preview
+        </h2>
+        <div
+          className={`col-span-5  mx-auto w-4/5  overflow-auto py-10 px-5 rounded-lg  ${
+            theme ? "bg-blue-950/50 text-white " : "bg-blue-300/50 text-black "
+          }`}
+        >
+          <h1 className="text-3xl flex justify-between font-bold mb-4">
             {formData.title ? formData.title : "Enter the Title"}
+          <div className="flex text-base justify-end ">
+          <button
+            type="button"
+            onClick={() => setPreview(!preview)}
+            className="px-4 block lg:hidden py-2 bg-blue-600 text-white rounded-md font-normal hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            Edit
+          </button>
+        </div>
           </h1>
+          
           <p className="text-blue-600 mb-4">
             {date(Date.now())} by{" "}
             <Link
@@ -374,6 +403,7 @@ const Create = ({ userData }) => {
               </p>
             </div>
           </div>
+        
         </div>
       </div>
     </div>
